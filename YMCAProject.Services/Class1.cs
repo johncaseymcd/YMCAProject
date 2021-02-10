@@ -8,5 +8,6 @@ namespace YMCAProject.Services
 {
     public class Class1
     {
+        // different stuff
     }
 }
