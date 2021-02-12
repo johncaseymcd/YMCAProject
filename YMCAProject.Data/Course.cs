@@ -32,16 +32,21 @@ namespace YMCAProject.Data
             }
         }
 
-        // Stretch goal?
+        // Stretch goal
         // ------------
         // [ForeignKey(nameof(Location))]
         // public int LocationID { get; set; }
         // public virtual Location Location { get; set; }
 
-        // Stretch goal?
+        // Stretch goal
         // ------------
         // [ForeignKey(nameof(Instructor))]
         // public int InstructorID { get; set; }
         // public virtual Instructor Instructor { get; set; }
+
+        public Course()
+        {
+            ListOfMembers = new HashSet<Member>();
+        }
     }
 }
