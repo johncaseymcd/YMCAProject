@@ -13,8 +13,25 @@ namespace YMCAProject.Data
         [Key]
         public int CourseID { get; set; }
         [Required]
-        public decimal Cost { get; set; }
-        
+        public string CourseName { get; set; }
+        [Required]
+        public string  CourseDescription { get; set; }
+        [Required]
+        public decimal CourseCost { get; set; }
+        public virtual ICollection<Member> ListOfMembers { get; set; }
+        [Required]
+        public int MaxCourseSize { get; set; }
+        public bool HasAvailability
+        {
+            get
+            {
+                if (ListOfMembers.Count < MaxCourseSize)
+                    return true;
+
+                return false;
+            }
+        }
+
         // Stretch goal?
         // ------------
         // [ForeignKey(nameof(Location))]
@@ -26,7 +43,5 @@ namespace YMCAProject.Data
         // [ForeignKey(nameof(Instructor))]
         // public int InstructorID { get; set; }
         // public virtual Instructor Instructor { get; set; }
-
-        public List<Member> Members { get; set; }
     }
 }
