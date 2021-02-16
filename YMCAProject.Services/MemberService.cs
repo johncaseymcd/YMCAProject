@@ -5,7 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using YMCAProject.Data;
 using YMCAProject.Models;
-
+using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace YMCAProject.Services
 {
@@ -14,6 +18,7 @@ namespace YMCAProject.Services
         private readonly int _userID;
 
         public MemberService(int userID)
+
         {
             _userID = userID;
         }
@@ -29,6 +34,10 @@ namespace YMCAProject.Services
                     PhoneNumber = model.PhoneNumber
                 };
             using (var ctx = new ApplicationDbContext())
+            {
+                ctx.Member.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
         }
     }
 }
