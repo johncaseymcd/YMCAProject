@@ -8,5 +8,6 @@ namespace YMCAProject.Data
 {
     public class Class1
     {
+        public int ClassID2 { get; set; }
     }
 }
