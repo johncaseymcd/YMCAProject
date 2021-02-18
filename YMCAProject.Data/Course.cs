@@ -18,19 +18,19 @@ namespace YMCAProject.Data
         public string  CourseDescription { get; set; }
         [Required]
         public decimal CourseCost { get; set; }
-        public virtual ICollection<Member> ListOfMembers { get; set; }
+        //public virtual ICollection<Member> ListOfMembers { get; set; }
         [Required]
         public int MaxCourseSize { get; set; }
-        public bool HasAvailability
-        {
-            get
-            {
-                if (ListOfMembers.Count < MaxCourseSize)
-                    return true;
+        //public bool HasAvailability
+        //{
+        //    get
+        //    {
+        //        //if (ListOfMembers.Count < MaxCourseSize)
+        //            return true;
 
-                return false;
-            }
-        }
+        //        return false;
+        //    }
+        //}
 
         // Stretch goal
         // ------------
@@ -46,7 +46,7 @@ namespace YMCAProject.Data
 
         public Course()
         {
-            ListOfMembers = new HashSet<Member>();
+            //ListOfMembers = new HashSet<Member>();
         }
     }
 }

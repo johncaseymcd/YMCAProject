@@ -66,9 +66,6 @@
     <Reference Include="Microsoft.Owin.Security, Version=4.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.4.1.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.1.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Owin.Security.Facebook, Version=4.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.1.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
     </Reference>
@@ -395,6 +392,20 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YMCAProject.Data\YMCAProject.Data.csproj">
+      <Project>{912b881c-17e8-4c55-986f-d51bdd45f9b1}</Project>
+      <Name>YMCAProject.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YMCAProject.Models\YMCAProject.Models.csproj">
+      <Project>{47ba3919-7fc6-4576-9c37-19d33aaebdfd}</Project>
+      <Name>YMCAProject.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YMCAProject.Services\YMCAProject.Services.csproj">
+      <Project>{0f60a453-3d99-485d-b6d0-309a3095e5a0}</Project>
+      <Name>YMCAProject.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
