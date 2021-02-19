@@ -15,12 +15,17 @@ namespace YMCAProject.Models
         public decimal CourseCost { get; set; }
         public int MaxCourseSize { get; set; }
         public bool HasAvailability { get; set; }
-        public ICollection<Member> CourseMembers { get; set; }
-        
-        // Stretch goal
-        // public string LocationName { get; set; }
+        public ICollection<Member> ListOfMembers { get; set; }
 
         // Stretch goal
-        // public string InstructorName { get; set; }
+        // public DateTime CourseStartDate { get; set; }
+        // public DateTime CourseEndDate { get; set; }
+        // public bool IsCurrentlyRunning { get; set; }
+
+        // Stretch goal
+        // public Location Location { get; set; }
+
+        // Stretch goal
+        // public Instructor Instructor { get; set; }
     }
 }

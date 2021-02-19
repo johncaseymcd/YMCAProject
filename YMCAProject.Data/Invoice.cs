@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YMCAProject.Data
 {
-    class Invoice
+    public class Invoice
     {
     }
 }

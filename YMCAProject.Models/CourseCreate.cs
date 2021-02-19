@@ -18,7 +18,12 @@ namespace YMCAProject.Models
         public decimal CourseCost { get; set; }
         [Required]
         public int MaxCourseSize { get; set; }
-        public virtual ICollection<Member> ListOfMembers { get; set; } = new List<Member>();
+        
+        // Stretch goal
+        // [Required]
+        // public DateTime CourseStartDate { get; set; }
+        // [Required]
+        // public DateTime CourseEndDate { get; set; }
 
         // Stretch goal
         // [Required]

@@ -28,8 +28,8 @@ namespace YMCAProject.WebAPI.Data
         {
         }
 
-        //public DbSet<Member> Members{ get; set; }
-        //public DbSet<Invoice> Invoices { get; set; }
+        public DbSet<Member> Members{ get; set; }
+        public DbSet<Invoice> Invoices { get; set; }
         public DbSet<Course> Courses { get; set; }
 
         // Stretch goal?
