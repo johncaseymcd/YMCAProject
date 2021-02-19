@@ -15,9 +15,14 @@ namespace YMCAProject.Models
         public bool HasAvailability { get; set; }
 
         // Stretch goal
-        // public string InstructorName { get; set; }
+        // public DateTime CourseStartDate { get; set; }
+        // public DateTime CourseEndDate { get; set; }
+        // public bool IsCurrentlyRunning { get; set; }
+
+        // Stretch goal
+        // public Instructor Instructor { get; set; }
 
         // Stretch goal 
-        // public string LocationName { get; set; }
+        // public Location Location { get; set; }
     }
 }
