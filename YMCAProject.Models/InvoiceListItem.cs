@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace YMCAProject.Models
 {
-    class InvoiceListItem
+    public class InvoiceListItem
     {
+        public int InvoiceID { get; set; }
+        public string InvoiceNumber { get; set; }
+        public decimal InvoiceAmount { get; set; }
+        public DateTime InvoiceDueDate { get; set; }
+        public bool InvoiceIsPaid { get; set; }
     }
 }
