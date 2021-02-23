@@ -10,8 +10,8 @@ namespace YMCAProject.Models
     {
         public int InvoiceID { get; set; }
         public object InvoiceNumber { get; set; }
-        public DateTime InvoiceDate { get; set; }
         public string InvoiceDescription { get; set; }
+        public DateTime InvoiceDueDate { get; set; }
         public decimal InvoiceAmount { get; set; }
     }
 }

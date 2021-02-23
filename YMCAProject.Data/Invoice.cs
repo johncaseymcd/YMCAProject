@@ -34,4 +34,3 @@ namespace YMCAProject.Data
         // Public virtual List<Course> Course { get; set; }
     }
 }
-

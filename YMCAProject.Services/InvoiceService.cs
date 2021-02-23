@@ -9,18 +9,17 @@ using YMCAProject.WebAPI.Data;
 
 namespace YMCAProject.Services
 {
-    class InvoiceService
+    public class InvoiceService
     {
         public bool CreateInvoice(InvoiceCreate model)
         {
-            var entity =
-                new Invoice()
+            var entity = new Invoice()
                 {
                     MemberID = _memberID,
                     InvoiceDate = model.InvoiceDate,
-                    DueDate = model.DueDate,
-                    Amount = model.Amount,
-                    Invoice = model.Invoice
+                    InvoiceDueDate = model.InvoiceDueDate,
+                    InvocieAmount = model.InvoiceAmount,
+                    InvoiceNumber = model.InvoiceNumber
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -29,6 +28,8 @@ namespace YMCAProject.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        ////////////////////////////////////////////////////////
 
         public IEnumerable<InvoiceListItem> GetInvoices()
         {
@@ -52,6 +53,8 @@ namespace YMCAProject.Services
         }
     }
 
+    ////////////////////////////////////////////////////////
+
     public NoteDetail GetNoteById(int id)
     {
         using (var ctx = new ApplicationDbContext())
@@ -72,6 +75,8 @@ namespace YMCAProject.Services
         }
     }
 
+    ////////////////////////////////////////////////////////
+
     public bool UpdateNote(NoteEdit model)
     {
         using (var ctx = new ApplicationDbContext())
@@ -89,6 +94,8 @@ namespace YMCAProject.Services
         }
     }
 
+    //////////////////////////////////////////////////////// 
+
     public bool DeleteNote(int noteId)
     {
         using (var ctx = new ApplicationDbContext())
@@ -104,8 +111,3 @@ namespace YMCAProject.Services
         }
     }
 }
-}
-
-
-
-
