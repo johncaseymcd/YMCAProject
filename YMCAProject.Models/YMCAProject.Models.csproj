@@ -66,15 +66,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CourseCreate.cs" />
     <Compile Include="InvoiceCreate.cs" />
     <Compile Include="InvoiceDetail.cs" />
-    <Compile Include="InvoiceListItem.cs" />
+    <Compile Include="InvoiceEdit.cs" />
+     <Compile Include="InvoiceListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YMCAProject.Data\YMCAProject.Data.csproj">
+      <Project>{912b881c-17e8-4c55-986f-d51bdd45f9b1}</Project>
+      <Name>YMCAProject.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
