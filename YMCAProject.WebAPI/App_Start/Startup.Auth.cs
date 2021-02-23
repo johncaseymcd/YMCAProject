@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using YMCAProject.WebAPI.Providers;
 using YMCAProject.WebAPI.Models;
+using YMCAProject.WebAPI.Data;
 
 namespace YMCAProject.WebAPI
 {

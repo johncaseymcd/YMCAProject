@@ -18,7 +18,7 @@ namespace YMCAProject.Data
         public string  CourseDescription { get; set; }
         [Required]
         public decimal CourseCost { get; set; }
-        public virtual ICollection<Member> ListOfMembers { get; set; }
+        public virtual ICollection<Member> ListOfMembers { get; set; } = new List<Member>();
         [Required]
         public int MaxCourseSize { get; set; }
         public bool HasAvailability
@@ -43,6 +43,23 @@ namespace YMCAProject.Data
         // [ForeignKey(nameof(Instructor))]
         // public int InstructorID { get; set; }
         // public virtual Instructor Instructor { get; set; }
+
+        // Stretch goal
+        // ------------
+        // [Required]
+        // public DateTime CourseStartDate { get; set; }
+        // [Required]
+        // public DateTime CourseEndDate { get; set; }
+        // public bool IsCurrentlyRunning
+        // {
+        //     get
+        //     {
+        //         if (DateTime.Now.DayOfYear >= CourseStartDate.DayOfYear && DateTime.Now.DayOfYear < CourseEndDate.DayOfYear)
+        //             return true;
+
+        //         return false;
+        //     }
+        // }
 
         public Course()
         {
