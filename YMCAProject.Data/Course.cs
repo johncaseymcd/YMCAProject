@@ -34,32 +34,32 @@ namespace YMCAProject.Data
 
         // Stretch goal
         // ------------
-        // [ForeignKey(nameof(Location))]
-        // public int LocationID { get; set; }
-        // public virtual Location Location { get; set; }
+        [ForeignKey(nameof(Location))]
+        public int LocationID { get; set; }
+        public virtual Location Location { get; set; }
 
         // Stretch goal
         // ------------
-        // [ForeignKey(nameof(Instructor))]
-        // public int InstructorID { get; set; }
-        // public virtual Instructor Instructor { get; set; }
+        [ForeignKey(nameof(Instructor))]
+        public int InstructorID { get; set; }
+        public virtual Instructor Instructor { get; set; }
 
         // Stretch goal
         // ------------
-        // [Required]
-        // public DateTime CourseStartDate { get; set; }
-        // [Required]
-        // public DateTime CourseEndDate { get; set; }
-        // public bool IsCurrentlyRunning
-        // {
-        //     get
-        //     {
-        //         if (DateTime.Now.DayOfYear >= CourseStartDate.DayOfYear && DateTime.Now.DayOfYear < CourseEndDate.DayOfYear)
-        //             return true;
+        [Required]
+        public DateTime CourseStartDate { get; set; }
+        [Required]
+        public DateTime CourseEndDate { get; set; }
+        public bool IsCurrentlyRunning
+        {
+            get
+            {
+                if (DateTime.Now.DayOfYear >= CourseStartDate.DayOfYear && DateTime.Now.DayOfYear < CourseEndDate.DayOfYear)
+                    return true;
 
-        //         return false;
-        //     }
-        // }
+                return false;
+            }
+        }
 
         public Course()
         {
