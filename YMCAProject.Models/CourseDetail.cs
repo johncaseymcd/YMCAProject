@@ -18,14 +18,14 @@ namespace YMCAProject.Models
         public ICollection<Member> ListOfMembers { get; set; }
 
         // Stretch goal
-        // public DateTime CourseStartDate { get; set; }
-        // public DateTime CourseEndDate { get; set; }
-        // public bool IsCurrentlyRunning { get; set; }
+        public DateTime CourseStartDate { get; set; }
+        public DateTime CourseEndDate { get; set; }
+        public bool IsCurrentlyRunning { get; set; }
 
         // Stretch goal
-        // public Location Location { get; set; }
+        public Location Location { get; set; }
 
         // Stretch goal
-        // public Instructor Instructor { get; set; }
+        public Instructor Instructor { get; set; }
     }
 }

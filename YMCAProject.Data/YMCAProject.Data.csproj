@@ -135,7 +135,9 @@
   <ItemGroup>
     <Compile Include="Course.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Instructor.cs" />
     <Compile Include="Invoice.cs" />
+    <Compile Include="Location.cs" />
     <Compile Include="Member.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

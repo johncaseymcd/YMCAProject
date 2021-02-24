@@ -19,10 +19,10 @@ namespace YMCAProject.Services
                 CourseDescription = model.CourseDescription,
                 CourseCost = model.CourseCost,
                 MaxCourseSize = model.MaxCourseSize
-                // CourseStartDate = model.CourseStartDate,
-                // CourseEndDate = model.CourseEndDate,
-                // InstructorID = model.InstructorID,
-                // LocationID = model.LocationID
+                CourseStartDate = model.CourseStartDate,
+                CourseEndDate = model.CourseEndDate,
+                InstructorID = model.InstructorID,
+                LocationID = model.LocationID
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -48,11 +48,11 @@ namespace YMCAProject.Services
                                 CourseCost = e.CourseCost,
                                 MaxCourseSize = e.MaxCourseSize,
                                 HasAvailability = e.HasAvailability
-                                // CourseStartDate = e.CourseStartDate.
-                                // CourseEndDate = e.CourseEndDate,
-                                // IsCurrentlyRunning = e.IsCurrentlyRunning
-                                // Instructor = e.Instructor,
-                                // Location = e.Location
+                                CourseStartDate = e.CourseStartDate.
+                                CourseEndDate = e.CourseEndDate,
+                                IsCurrentlyRunning = e.IsCurrentlyRunning
+                                Instructor = e.Instructor,
+                                Location = e.Location
                             }
                         );
 
@@ -79,11 +79,11 @@ namespace YMCAProject.Services
                         MaxCourseSize = entity.MaxCourseSize,
                         HasAvailability = entity.HasAvailability,
                         ListOfMembers = entity.ListOfMembers
-                        // CourseStartDate = entity.CourseStartDate,
-                        // CourseEndDate = entity.CourseEndDate,
-                        // IsCurrentlyRunning = entity.IsCurrentlyRunning,
-                        // Instructor = entity.Instructor,
-                        // Location = entity.Location
+                        CourseStartDate = entity.CourseStartDate,
+                        CourseEndDate = entity.CourseEndDate,
+                        IsCurrentlyRunning = entity.IsCurrentlyRunning,
+                        Instructor = entity.Instructor,
+                        Location = entity.Location
                     };
             }
         }
@@ -105,11 +105,11 @@ namespace YMCAProject.Services
                             CourseCost = e.CourseCost,
                             MaxCourseSize = e.MaxCourseSize,
                             HasAvailability = e.HasAvailability,
-                            // CourseStartDate = e.CourseStartDate,
-                            // CourseEndDate = e.CourseEndDate,
-                            // IsCurrentlyRunning = e.IsCurrentlyRunning,
-                            // Instructor = e.Instructor,
-                            // Location = e.Location
+                            CourseStartDate = e.CourseStartDate,
+                            CourseEndDate = e.CourseEndDate,
+                            IsCurrentlyRunning = e.IsCurrentlyRunning,
+                            Instructor = e.Instructor,
+                            Location = e.Location
                         }
                     );
 
@@ -119,100 +119,100 @@ namespace YMCAProject.Services
 
         // Stretch goal
         // ------------
-        // public IEnumerable<CourseListItem> GetCurrentCourses()
-        // {
-        //     using (var ctx = new ApplicationDbContext())
-        //     {
-        //         var query =
-        //             ctx
-        //                 .Courses
-        //                 .Where(e => e.IsCurrentlyRunning)
-        //                 .Select(
-        //                     e =>
-        //                     new CourseListItem
-        //                     {
-        //                         CourseID = e.CourseID,
-        //                         CourseName = e.CourseName,
-        //                         CourseCost = e.CourseCost,
-        //                         MaxCourseSize = e.MaxCourseSize,
-        //                         HasAvailability = e.HasAvailability,
-        //                         CourseStartDate = e.CourseStartDate,
-        //                         CourseEndDate = e.CourseEndDate,
-        //                         IsCurrentlyRunning = e.IsCurrentlyRunning
-        //                         Instructor = e.Instructor,
-        //                         Location = e.Location
-        //                     }
-        //                 );
+        public IEnumerable<CourseListItem> GetCurrentCourses()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Courses
+                        .Where(e => e.IsCurrentlyRunning)
+                        .Select(
+                            e =>
+                            new CourseListItem
+                            {
+                                CourseID = e.CourseID,
+                                CourseName = e.CourseName,
+                                CourseCost = e.CourseCost,
+                                MaxCourseSize = e.MaxCourseSize,
+                                HasAvailability = e.HasAvailability,
+                                CourseStartDate = e.CourseStartDate,
+                                CourseEndDate = e.CourseEndDate,
+                                IsCurrentlyRunning = e.IsCurrentlyRunning
+                                Instructor = e.Instructor,
+                                Location = e.Location
+                            }
+                        );
 
-        //         return query.ToList();
-        //     }
-        // }
-
-
-
-        // Stretch goal
-        // ------------
-        // public IEnumerable<CourseListItem> GetCoursesByInstructor(int instructorID)
-        // {
-        //     using (var ctx = new ApplicationDbContext())
-        //     {
-        //         var query =
-        //             ctx
-        //             .Courses
-        //             .Where(e => e.Instructor.InstructorID == instructorID)
-        //             .Select(
-        //                 e =>
-        //                 new CourseListItem
-        //                 {
-        //                     CourseID = e.CourseID,
-        //                     CourseName = e.CourseName,
-        //                     CourseCost = e.CourseCost,
-        //                     MaxCourseSize = e.MaxCourseSize,
-        //                     HasAvailability = e.HasAvailability,
-        //                     CourseStartDate = e.CourseStartDate,
-        //                     CourseEndDate = e.CourseEndDate,
-        //                     IsCurrentlyRunning = e.IsCurrentlyRunning,
-        //                     Instructor = e.Instructor,
-        //                     Location = e.Location
-        //                 }
-        //             );
-
-        //         return query.ToList();
-        //     }
-        // }
+                return query.ToList();
+            }
+        }
 
 
 
         // Stretch goal
         // ------------
-        // public IEnumerable<CourseListItem> GetCoursesByLocation(int locationID)
-        // {
-        //     using (var ctx = new ApplicationDbContext())
-        //     {
-        //         var query =
-        //             ctx
-        //                 .Courses
-        //                 .Where(e => e.Location.LocationID == locationID)
-        //                 .Select(
-        //                     e =>
-        //                     new CourseListItem
-        //                     {
-        //                         CourseID = e.CourseID,
-        //                         CourseName = e.CourseName,
-        //                         CourseCost = e.CourseCost,
-        //                         MaxCourseSize = e.MaxCourseSize,
-        //                         HasAvailability = e.HasAvailability,
-        //                         CourseStartDate = e.CourseStartDate,
-        //                         CourseEndDate = e.CourseEndDate,
-        //                         IsCurrentlyRunning = e.IsCurrentlyRunning,
-        //                         Instructor = e.Instructor,
-        //                         Location = e.Location
-        //                     }
-        //                 );
+        public IEnumerable<CourseListItem> GetCoursesByInstructor(int instructorID)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .Courses
+                    .Where(e => e.Instructor.InstructorID == instructorID)
+                    .Select(
+                        e =>
+                        new CourseListItem
+                        {
+                           CourseID = e.CourseID,
+                            CourseName = e.CourseName,
+                            CourseCost = e.CourseCost,
+                            MaxCourseSize = e.MaxCourseSize,
+                            HasAvailability = e.HasAvailability,
+                            CourseStartDate = e.CourseStartDate,
+                            CourseEndDate = e.CourseEndDate,
+                            IsCurrentlyRunning = e.IsCurrentlyRunning,
+                            Instructor = e.Instructor,
+                            Location = e.Location
+                        }
+                    );
 
-        //         return query.ToList();
-        //     }
-        // }
+                return query.ToList();
+            }
+        }
+
+
+
+        // Stretch goal
+        // ------------
+        public IEnumerable<CourseListItem> GetCoursesByLocation(int locationID)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Courses
+                        .Where(e => e.Location.LocationID == locationID)
+                        .Select(
+                            e =>
+                            new CourseListItem
+                            {
+                                CourseID = e.CourseID,
+                                CourseName = e.CourseName,
+                                CourseCost = e.CourseCost,
+                                MaxCourseSize = e.MaxCourseSize,
+                                HasAvailability = e.HasAvailability,
+                                CourseStartDate = e.CourseStartDate,
+                                CourseEndDate = e.CourseEndDate,
+                                IsCurrentlyRunning = e.IsCurrentlyRunning,
+                                Instructor = e.Instructor,
+                                Location = e.Location
+                            }
+                        );
+
+                return query.ToList();
+           }
+        }
 
         public bool UpdateCourse(CourseEdit model)
         {
@@ -227,9 +227,9 @@ namespace YMCAProject.Services
                 entity.CourseDescription = model.CourseDescription;
                 entity.CourseCost = model.CourseCost;
                 entity.MaxCourseSize = model.MaxCourseSize;
-                // entity.CourseStartDate = model.CourseStartDate;
-                // entity.CourseEndDate = model.CourseEndDate;
-                // entity.Instructor = model.Instructor;
+                entity.CourseStartDate = model.CourseStartDate;
+                entity.CourseEndDate = model.CourseEndDate;
+                entity.Instructor = model.Instructor;
 
                 return ctx.SaveChanges() > 0;
             };
