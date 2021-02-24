@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YMCAProject.Data;
 
 namespace YMCAProject.Models
 {
@@ -15,14 +16,14 @@ namespace YMCAProject.Models
         public bool HasAvailability { get; set; }
 
         // Stretch goal
-        // public DateTime CourseStartDate { get; set; }
-        // public DateTime CourseEndDate { get; set; }
-        // public bool IsCurrentlyRunning { get; set; }
+        public DateTime CourseStartDate { get; set; }
+        public DateTime CourseEndDate { get; set; }
+        public bool IsCurrentlyRunning { get; set; }
 
         // Stretch goal
-        // public Instructor Instructor { get; set; }
+        public Instructor Instructor { get; set; }
 
         // Stretch goal 
-        // public Location Location { get; set; }
+        public Location Location { get; set; }
     }
 }

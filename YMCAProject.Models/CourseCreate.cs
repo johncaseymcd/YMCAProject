@@ -20,17 +20,17 @@ namespace YMCAProject.Models
         public int MaxCourseSize { get; set; }
         
         // Stretch goal
-        // [Required]
-        // public DateTime CourseStartDate { get; set; }
-        // [Required]
-        // public DateTime CourseEndDate { get; set; }
+        [Required]
+        public DateTime CourseStartDate { get; set; }
+        [Required]
+        public DateTime CourseEndDate { get; set; }
 
         // Stretch goal
-        // [Required]
-        // public int LocationID { get; set; }
+        [Required]
+        public int LocationID { get; set; }
 
         // Stretch goal
-        // [Required]
-        // public int InstructorID { get; set; }
+        [Required]
+        public int InstructorID { get; set; }
     }
 }

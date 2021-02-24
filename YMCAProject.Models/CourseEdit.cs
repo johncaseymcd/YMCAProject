@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YMCAProject.Data;
 
 namespace YMCAProject.Models
 {
@@ -15,13 +16,13 @@ namespace YMCAProject.Models
         public int MaxCourseSize { get; set; }
 
         // Stretch goal
-        // public DateTime CourseStartDate { get; set; }
-        // public DateTime CourseEndDate { get; set; }
+        public DateTime CourseStartDate { get; set; }
+        public DateTime CourseEndDate { get; set; }
 
         // Stretch goal
-        // public Location Location { get; set; }
+        public Location Location { get; set; }
 
         // Stretch goal
-        // public Instructor Instructor { get; set; }
+        public Instructor Instructor { get; set; }
     }
 }

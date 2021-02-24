@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace YMCAProject.Data
 {
-    class Instructor
+    public class Instructor
     {
+        public int InstructorID { get; set; }
     }
 }
