@@ -17,7 +17,7 @@ namespace YMCAProject.Data
         public int MemberID { get; set; }
         public virtual Member Members { get; set; }
         [Required]
-        public object InvoiceNumber { get; set; }
+        public object InvoiceNumber { get; set; } 
         [Required]
         public DateTime InvoiceDate { get; set; }
         [Required]
