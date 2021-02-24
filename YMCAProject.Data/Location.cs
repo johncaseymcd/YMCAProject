@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YMCAProject.Services
+namespace YMCAProject.Data
 {
-    public class Class1
+    public class Location
     {
-        // different stuff
+        public int LocationID { get; set; }
     }
 }

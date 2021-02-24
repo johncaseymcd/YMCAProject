@@ -75,6 +75,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CourseCreate.cs" />
+    <Compile Include="CourseDetail.cs" />
+    <Compile Include="CourseEdit.cs" />
+    <Compile Include="CourseListItem.cs" />
+    <Compile Include="MemberCreate.cs" />
+    <Compile Include="MemberDetail.cs" />
+    <Compile Include="MemberEdit.cs" />
+    <Compile Include="MemberListItem.cs" />
     <Compile Include="InvoiceCreate.cs" />
     <Compile Include="InvoiceDetail.cs" />
     <Compile Include="InvoiceEdit.cs" />
