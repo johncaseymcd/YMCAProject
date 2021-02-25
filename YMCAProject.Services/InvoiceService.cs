@@ -11,16 +11,28 @@ namespace YMCAProject.Services
 {
     public class InvoiceService
     {
+        private readonly int _invoiceID;
+
+        public InvoiceService(int invoiceID)
+        {
+            _invoiceID = invoiceID;
+        }
+
+        public InvoiceService()
+        {
+        }
+
         public bool CreateInvoice(InvoiceCreate model)
         {
             var entity = new Invoice()
-                {
-                    MemberID = _memberID,
-                    InvoiceDate = model.InvoiceDate,
-                    InvoiceDueDate = model.InvoiceDueDate,
-                    InvocieAmount = model.InvoiceAmount,
-                    InvoiceNumber = model.InvoiceNumber
-                };
+            {
+                InvoiceID = _invoiceID,
+                InvoiceNumber = model.InvoiceNumber,
+                InvoiceDate = model.InvoiceDate,
+                InvoiceDescription = model.InvoiceDescription,
+                InvoiceDueDate = model.InvoiceDueDate,
+                InvoiceAmount = model.InvoiceAmount,
+            };
 
             using (var ctx = new ApplicationDbContext())
             {
@@ -29,85 +41,80 @@ namespace YMCAProject.Services
             }
         }
 
-        ////////////////////////////////////////////////////////
-
-        public IEnumerable<InvoiceListItem> GetInvoices()
+        public IEnumerable<InvoiceListItem> GetAllInvoices()
         {
             using (var ctx = new ApplicationDbContext())
-
+            {
                 var query =
                     ctx
-                        .Invoices
-                        .Where(e => e.MemberID == _memberID)
-                        .Select(
-                            e =>
-                                new InvoiceListItem
-                                {
-                                    InvoiceID = e.InvoiceID,
-                                    Invoice = e.Invocie,
-                                    DueData = e.DueDate
-                                }
-                        );
+                    .Invoices
+                    .Where(e => e.InvoiceID == _invoiceID)
+                    .Select(
+                        e => new InvoiceListItem
+                        {
+                            InvoiceID = e.InvoiceID,
+                            InvoiceNumber = (string)e.InvoiceNumber,
+                            InvoiceDueDate = e.InvoiceDueDate,
+                            InvoiceAmount = e.InvoiceAmount
+                        }
+                    );
 
-            return query.ToArray();
+                return query.ToArray();
+            }
         }
-    }
 
-    ////////////////////////////////////////////////////////
-
-    public NoteDetail GetNoteById(int id)
-    {
-        using (var ctx = new ApplicationDbContext())
+        public InvoiceDetail GetInvoiceByID(int InvoiceID)
         {
-            var entity =
-                ctx
-                    .Notes
-                    .Single(e => e.NoteId == id && e.OwnerId == _userId);
-            return
-                new NoteDetail
-                {
-                    NoteId = entity.NoteId,
-                    Title = entity.Title,
-                    Content = entity.Content,
-                    CreatedUtc = entity.CreatedUtc,
-                    ModifiedUtc = entity.ModifiedUtc
-                };
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Invoices
+                    .Single(e => e.InvoiceID == InvoiceID);
+                return
+                   new InvoiceDetail
+                   {
+                       InvoiceID = entity.InvoiceID,
+                       InvoiceNumber = entity.InvoiceNumber,
+                       InvoiceDescription = entity.InvoiceDescription,
+                       InvoiceDueDate = entity.InvoiceDueDate,
+                       InvoiceAmount = entity.InvoiceAmount,
+                   };
+            }
         }
-    }
 
-    ////////////////////////////////////////////////////////
-
-    public bool UpdateNote(NoteEdit model)
-    {
-        using (var ctx = new ApplicationDbContext())
+        public bool UpdateInvoice(InvoiceEdit model)
         {
-            var entity =
-                ctx
-                    .Notes
-                    .Single(e => e.NoteId == model.NoteId && e.OwnerId == _userId);
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Invoices
+                    .Single(e => e.InvoiceID == model.InvoiceID);
+                entity.InvoiceID = entity.InvoiceID;
+                entity.InvoiceNumber = entity.InvoiceNumber;
+                entity.InvoiceDate = entity.InvoiceDate;
+                entity.InvoiceDescription = entity.InvoiceDescription;
+                entity.InvoiceDueDate = entity.InvoiceDueDate;
+                entity.InvoiceAmount = entity.InvoiceAmount;
 
-            entity.Title = model.Title;
-            entity.Content = model.Content;
-            entity.ModifiedUtc = DateTimeOffset.UtcNow;
-
-            return ctx.SaveChanges() == 1;
+                return ctx.SaveChanges() == 1;
+            };
         }
-    }
 
-    //////////////////////////////////////////////////////// 
-
-    public bool DeleteNote(int noteId)
-    {
-        using (var ctx = new ApplicationDbContext())
+        public bool DeleteInvoice(int invoiceID)
         {
-            var entity =
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
                 ctx
-                    .Notes
-                    .Single(e => e.NoteId == noteId && e.OwnerId == _userId);
+                .Invoices
+                .Single(e => e.InvoiceID == invoiceID);
 
-            ctx.Notes.Remove(entity);
+                ctx.Invoices.Remove(entity);
 
-            return ctx.SaveChanges() == 1;
+                return ctx.SaveChanges() == 1;
+            }
         }
     }
 }
