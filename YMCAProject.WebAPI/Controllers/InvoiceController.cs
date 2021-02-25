@@ -15,7 +15,7 @@ namespace YMCAProject.WebAPI.Controllers
         public IHttpActionResult GetAllInvoices()
         {
             var service = new InvoiceService();
-            var invoiceList = service.GetAllInvoices();
+            var invoiceList = service.GetInvoices();
             return Ok(invoiceList);
         }
 

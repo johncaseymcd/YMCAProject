@@ -83,7 +83,7 @@ namespace YMCAProject.Services
             }
         }
 
-        public bool UpdateInvocie(InvoiceEdit model)
+        public bool UpdateInvoice(InvoiceEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
