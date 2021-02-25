@@ -18,7 +18,7 @@ namespace YMCAProject.Services
                 CourseName = model.CourseName,
                 CourseDescription = model.CourseDescription,
                 CourseCost = model.CourseCost,
-                MaxCourseSize = model.MaxCourseSize
+                MaxCourseSize = model.MaxCourseSize,
                 CourseStartDate = model.CourseStartDate,
                 CourseEndDate = model.CourseEndDate,
                 InstructorID = model.InstructorID,
@@ -47,12 +47,12 @@ namespace YMCAProject.Services
                                 CourseName = e.CourseName,
                                 CourseCost = e.CourseCost,
                                 MaxCourseSize = e.MaxCourseSize,
-                                HasAvailability = e.HasAvailability
-                                CourseStartDate = e.CourseStartDate.
+                                HasAvailability = e.HasAvailability,
+                                CourseStartDate = e.CourseStartDate,
                                 CourseEndDate = e.CourseEndDate,
-                                IsCurrentlyRunning = e.IsCurrentlyRunning
+                                IsCurrentlyRunning = e.IsCurrentlyRunning,
                                 Instructor = e.Instructor,
-                                Location = e.Location
+                                Location = e.Location,
                             }
                         );
 
@@ -78,7 +78,7 @@ namespace YMCAProject.Services
                         CourseCost = entity.CourseCost,
                         MaxCourseSize = entity.MaxCourseSize,
                         HasAvailability = entity.HasAvailability,
-                        ListOfMembers = entity.ListOfMembers
+                        ListOfMembers = entity.ListOfMembers,
                         CourseStartDate = entity.CourseStartDate,
                         CourseEndDate = entity.CourseEndDate,
                         IsCurrentlyRunning = entity.IsCurrentlyRunning,
@@ -138,7 +138,7 @@ namespace YMCAProject.Services
                                 HasAvailability = e.HasAvailability,
                                 CourseStartDate = e.CourseStartDate,
                                 CourseEndDate = e.CourseEndDate,
-                                IsCurrentlyRunning = e.IsCurrentlyRunning
+                                IsCurrentlyRunning = e.IsCurrentlyRunning,
                                 Instructor = e.Instructor,
                                 Location = e.Location
                             }
