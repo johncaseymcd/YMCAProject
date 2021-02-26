@@ -31,6 +31,6 @@ namespace YMCAProject.Data
 
         // Stretch Goal
         // [Required|
-        // Public virtual List<Course> Course { get; set; }
+        public virtual List<Course> Courses { get; set; }
     }
 }
