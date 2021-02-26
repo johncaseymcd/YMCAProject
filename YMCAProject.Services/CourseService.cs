@@ -146,7 +146,24 @@ namespace YMCAProject.Services
             }
         }
 
+        // Stretch goal
+        // ------------
+        // public bool AddCourseToInvoice(int invoiceID, int courseID)
+        // {
+        //     using (var ctx = new ApplicationDbContext())
+        //     {
+        //         var invoice =
+        //             ctx.Invoices
+        //                 .Single(e => e.InvoiceID == invoiceID);
 
+        //         var course =
+        //             ctx.Courses
+        //                 .Single(e => e.CourseID == courseID);
+
+        //         invoice.Courses.Add(course);
+        //         return ctx.SaveChanges() > 0;
+        //     }
+        // }
 
         // Stretch goal
         // ------------

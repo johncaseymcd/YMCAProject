@@ -64,6 +64,20 @@ namespace YMCAProject.WebAPI.Controllers
             return Ok(courseList);
         }
 
+        // Stretch goal
+        // ------------
+        // [HttpPost]
+        // [Route("api/Course/{courseID}billto/{invoiceID}")]
+        // public IHttpActionResult AddCourseToInvoice([FromUri] int courseID, [FromUri] int invoiceID)
+        // {
+        //     var service = new CourseService();
+
+        //     if (!service.AddCourseToInvoice())
+        //         return InternalServerError();
+
+        //     return Ok($"Course successfully billed to Invoice {invoiceID}!");
+        // }
+
 
 
         // Stretch goal
