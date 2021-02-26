@@ -30,19 +30,21 @@ namespace YMCAProject.Data
 
                 return false;
             }
+
+            set { }
         }
 
         // Stretch goal
         // ------------
-        [ForeignKey(nameof(Location))]
-        public int LocationID { get; set; }
-        public virtual Location Location { get; set; }
+        //[ForeignKey(nameof(Location))]
+        //public int LocationID { get; set; }
+        //public virtual Location Location { get; set; }
 
         // Stretch goal
         // ------------
-        [ForeignKey(nameof(Instructor))]
-        public int InstructorID { get; set; }
-        public virtual Instructor Instructor { get; set; }
+        //[ForeignKey(nameof(Instructor))]
+        //public int InstructorID { get; set; }
+        //public virtual Instructor Instructor { get; set; }
 
         // Stretch goal
         // ------------
@@ -59,6 +61,8 @@ namespace YMCAProject.Data
 
                 return false;
             }
+
+            set { }
         }
 
         public Course()

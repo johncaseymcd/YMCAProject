@@ -9,8 +9,8 @@ namespace YMCAProject.Models
 {
     public class MemberCreate
     {
-        [Required]
-        public int MemberID { get; set; }
+        //[Required]
+        //public int MemberID { get; set; }
         [Required]
         public DateTime DateJoined { get; set; }
         [Required]

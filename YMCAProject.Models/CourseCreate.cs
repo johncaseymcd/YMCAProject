@@ -26,11 +26,11 @@ namespace YMCAProject.Models
         public DateTime CourseEndDate { get; set; }
 
         // Stretch goal
-        [Required]
-        public int LocationID { get; set; }
+        //[Required]
+        //public int LocationID { get; set; }
 
         // Stretch goal
-        [Required]
-        public int InstructorID { get; set; }
+        //[Required]
+        //public int InstructorID { get; set; }
     }
 }
