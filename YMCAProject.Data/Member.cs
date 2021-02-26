@@ -9,7 +9,7 @@ namespace YMCAProject.Data
 {
     public class Member
     {
-        [Required]
+        [Key]
         public int MemberID { get; set; }
         [Required]
         public DateTime DateJoined { get; set; }
