@@ -68,27 +68,27 @@ namespace YMCAProject.WebAPI.Controllers
 
         // Stretch goal
         // ------------
-        [HttpGet]
-        [Route("api/Course/Instructor/{id}")]
-        public IHttpActionResult GetCoursesByInstructor([FromUri] int instructorID)
-        {
-            var service = new CourseService();
-            var courseList = service.GetCoursesByInstructor(instructorID);
-            return Ok(courseList);
-        }
+        //[HttpGet]
+        //[Route("api/Course/Instructor/{id}")]
+        //public IHttpActionResult GetCoursesByInstructor([FromUri] int instructorID)
+        //{
+        //    var service = new CourseService();
+        //    var courseList = service.GetCoursesByInstructor(instructorID);
+        //    return Ok(courseList);
+        //}
 
 
 
         // Stretch goal
         // ------------
-        [HttpGet]
-        [Route("api/Course/Location/{id}")]
-        public IHttpActionResult GetCoursesByLocation([FromUri] int locationID)
-        {
-            var service = new CourseService();
-            var courseList = service.GetCoursesByLocation(locationID);
-            return Ok(courseList);
-        }
+        //[HttpGet]
+        //[Route("api/Course/Location/{id}")]
+        //public IHttpActionResult GetCoursesByLocation([FromUri] int locationID)
+        //{
+        //    var service = new CourseService();
+        //    var courseList = service.GetCoursesByLocation(locationID);
+        //    return Ok(courseList);
+        //}
 
         [HttpPut]
         [Route("api/Course/{id}")]
