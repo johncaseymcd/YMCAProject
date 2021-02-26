@@ -11,21 +11,21 @@ namespace YMCAProject.Services
 {
     public class MemberService
     {
-        private readonly int _memberID;
+        //private readonly int _memberID;
 
-        public MemberService(int memberID)
-        {
-            _memberID = memberID;
-        }
+       // public MemberService(int memberID)
+       // {
+            //_memberID = memberID;
+        //}
         public bool CreateMember(MemberCreate model)
         {
-            var entity =
-                new Member()
+            var entity = new Member
                 {
-                    MemberID = _memberID,
+                    //MemberID = model.MemberID,
                     DateJoined = model.DateJoined,
                     Name = model.Name,
                     Email = model.Email,
+                    Address = model.Address,
                     PhoneNumber = model.PhoneNumber,
                 };
 
@@ -42,7 +42,7 @@ namespace YMCAProject.Services
                 var query =
                     ctx
                     .Members
-                    .Where(e => e.MemberID == _memberID)
+                    //.Where(e => e.MemberID == _memberID)
                     .Select(
                        e =>
                        new MemberListItem
@@ -61,7 +61,7 @@ namespace YMCAProject.Services
                 var entity =
                     ctx
                     .Members
-                    .Single(e => e.MemberID == id && e.MemberID == _memberID);
+                    .Single(e => e.MemberID == id);
                 return
                     new MemberDetail
                     {
@@ -84,7 +84,7 @@ namespace YMCAProject.Services
                 var entity =
                     ctx
                     .Members
-                    .Single(e => e.MemberID == model.MemberID && e.MemberID == _memberID);
+                    .Single(e => e.MemberID == model.MemberID);
                 entity.MemberID = model.MemberID;
                 entity.Name = model.Name;
                 entity.Email = model.Email;
@@ -104,7 +104,7 @@ namespace YMCAProject.Services
                 var entity =
                     ctx
                     .Members
-                    .Single(e => e.MemberID == memberID && e.MemberID == _memberID);
+                    .Single(e => e.MemberID == memberID);
 
                 ctx.Members.Remove(entity);
 
