@@ -7,13 +7,13 @@ namespace YMCAProject.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class InitialMigration : IMigrationMetadata
+    public sealed partial class firstload : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(firstload));
         
         string IMigrationMetadata.Id
         {
-            get { return "202102252319270_InitialMigration"; }
+            get { return "202102260049524_firstload"; }
         }
         
         string IMigrationMetadata.Source

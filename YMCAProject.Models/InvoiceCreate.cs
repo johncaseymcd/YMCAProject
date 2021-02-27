@@ -8,14 +8,21 @@ using System.Threading.Tasks;
 namespace YMCAProject.Models
 {
     public class InvoiceCreate
-    {
-        public object InvoiceNumber { get; set; } 
-        public DateTime InvoiceDate { get; set; }        
-        public string InvoiceDescription { get; set; }        
-        public DateTime InvoiceDueDate { get; set; }        
-        public decimal InvoiceAmount { get; set; }            
-        
-        // Stretch Goal
-        // public int Course { get; set; }                
+    {   
+        [Required]
+        public object InvoiceNumber { get; set; }
+        [Required]
+        public int MemberID { get; set; }
+        [Required]
+        public DateTimeOffset InvoiceDate { get; set; }
+        [Required]
+        [MaxLength(70, ErrorMessage = "Number of characters exceeded.")]
+        public string InvoiceDescription { get; set; }
+        [Required]
+        public DateTimeOffset InvoiceDueDate { get; set; }
+        [Required]
+        public decimal InvoiceAmount { get; set; }    
+        [Required]
+        public bool InvoiceIsPaid { get; set; }        
     }
 }
