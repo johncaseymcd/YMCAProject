@@ -10,9 +10,10 @@ namespace YMCAProject.Models
     public class InvoiceCreate
     {   
         [Required]
-        public object InvoiceNumber { get; set; }
+        public int InvocieID { get; set; }
         [Required]
         public int MemberID { get; set; }
+        // public int InvoiceNumber { get; set; }
         [Required]
         public DateTimeOffset InvoiceDate { get; set; }
         [Required]

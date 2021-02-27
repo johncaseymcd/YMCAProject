@@ -10,7 +10,7 @@ namespace YMCAProject.Models
     public class InvoiceEdit
     {
         public int InvoiceID { get; set; }
-        public object InvoiceNumber { get; set; }
+        // public int InvoiceNumber { get; set; }
         public string InvoiceDescription { get; set; }
         public DateTimeOffset InvoiceDueDate { get; set; }
         public decimal InvoiceAmount { get; set; }

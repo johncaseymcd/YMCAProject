@@ -11,7 +11,7 @@ namespace YMCAProject.Models
     {
         public int InvoiceID { get; set; }
         public int MemberID { get; set; }
-        public object InvoiceNumber { get; set; }
+        // public int InvoiceNumber { get; set; }
         public DateTimeOffset InvoiceDate { get; set; }
         public string InvoiceDescription { get; set; }
         public DateTimeOffset InvoiceDueDate { get; set; }
