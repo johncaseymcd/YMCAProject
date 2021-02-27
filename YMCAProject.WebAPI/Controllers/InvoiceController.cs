@@ -10,24 +10,6 @@ namespace YMCAProject.WebAPI.Controllers
 {
     public class InvoiceController : ApiController
     {
-        [HttpGet]
-        [Route("api/Invoice")]
-        public IHttpActionResult GetAllInvoices()
-        {
-            var service = new InvoiceService();
-            var invoiceList = service.GetInvoices();
-            return Ok(invoiceList);
-        }
-
-        [HttpGet]
-        [Route("api/Invoice/{id}")]
-        public IHttpActionResult GetInvoiceByID([FromUri] int id)
-        {
-            var service = new InvoiceService();
-            var invoice = service.GetInvoiceByID(id);
-            return Ok(invoice);
-        }
-
         [HttpPost]
         [Route("api/Invoice")]
         public IHttpActionResult PostInvoice([FromBody] InvoiceCreate invoice)
@@ -41,6 +23,24 @@ namespace YMCAProject.WebAPI.Controllers
                 return InternalServerError();
 
             return Ok("Invoice successfully added.");
+        }
+
+        [HttpGet]
+        [Route("api/Invoice/{id}")]
+        public IHttpActionResult GetInvoiceByID([FromUri] int id)
+        {
+            var service = new InvoiceService();
+            var invoice = service.GetInvoiceByID(id);
+            return Ok(invoice);
+        }
+
+        [HttpGet]
+        [Route("api/Invoice")]
+        public IHttpActionResult GetAllInvoices()
+        {
+            var service = new InvoiceService();
+            var invoiceList = service.GetAllInvoices();
+            return Ok(invoiceList);
         }
 
         [HttpPut]
@@ -70,6 +70,3 @@ namespace YMCAProject.WebAPI.Controllers
         }
     }
 }
-
-
-    
