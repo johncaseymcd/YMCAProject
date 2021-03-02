@@ -10,21 +10,26 @@ using YMCAProject.Services;
 
 namespace YMCAProject.WebAPI.Controllers
 {
+    [Authorize]
     public class MemberController : ApiController
     {
+
         private MemberService CreateMemberService()
         {
-            var memberID = int.Parse(User.Identity.GetUserId());
-            var MemberService = new MemberService(memberID);
+            //var memberID = int.Parse(User.Identity.GetUserId());
+            var MemberService = new MemberService();
             return MemberService;
         }
-
-        public IHttpActionResult Get()
+        [HttpGet]
+        [Route("api/Member/all")]
+        public IHttpActionResult GetAllMembers()
         {
             MemberService memberService = CreateMemberService();
             var members = memberService.GetMembers();
             return Ok(members);
         }
+        [HttpPost]
+        [Route("api/Member")]
         public IHttpActionResult Post (MemberCreate member)
         {
             if (!ModelState.IsValid)
@@ -37,12 +42,16 @@ namespace YMCAProject.WebAPI.Controllers
 
             return Ok();
         }
-        public IHttpActionResult Get(int id)
+        [HttpGet]
+        [Route("api/Member/{id}")]
+        public IHttpActionResult GetMemberByID(int id)
         {
             MemberService memberService = CreateMemberService();
             var member = memberService.GetMemberByID(id);
             return Ok(member);
         }
+        [HttpPut]
+        [Route("api/Member/{id}")]
         public IHttpActionResult Put(MemberEdit member)
         {
             if (!ModelState.IsValid)
@@ -54,6 +63,8 @@ namespace YMCAProject.WebAPI.Controllers
 
             return Ok();
         }
+        [HttpDelete]
+        [Route("api/Member/{id}")]
         public IHttpActionResult Delete (int id)
         {
             var service = CreateMemberService();
