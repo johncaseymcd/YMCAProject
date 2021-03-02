@@ -60,7 +60,8 @@ namespace YMCAProject.WebAPI.Controllers
 
         [HttpDelete]
         [Route("api/Invoice/{id}")]
-        public IHttpActionResult DeleteInvocie([FromUri] int id)
+        public IHttpActionResult Delete(int id)
+
         {
             var service = new InvoiceService();
             if (!service.DeleteInvoice(id))

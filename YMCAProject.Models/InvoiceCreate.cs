@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 namespace YMCAProject.Models
 {
     public class InvoiceCreate
-    {   
+
+    {
         [Required]
-        public int InvocieID { get; set; }
-        [Required]
-        public int MemberID { get; set; }
-        // public int InvoiceNumber { get; set; }
+        public int InvoiceID { get; set; }
+        // [Required]
+        // public int MemberID { get; set; }        
         [Required]
         public DateTimeOffset InvoiceDate { get; set; }
         [Required]
@@ -22,8 +22,8 @@ namespace YMCAProject.Models
         [Required]
         public DateTimeOffset InvoiceDueDate { get; set; }
         [Required]
-        public decimal InvoiceAmount { get; set; }    
+        public decimal InvoiceAmount { get; set; }
         [Required]
-        public bool InvoiceIsPaid { get; set; }        
+        public bool InvoiceIsPaid { get; set; }
     }
 }
