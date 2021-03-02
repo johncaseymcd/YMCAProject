@@ -27,10 +27,10 @@ namespace YMCAProject.Services
                     InvoiceIsPaid = model.InvoiceIsPaid,
                 };
 
-            using (var ctx = new ApplicationDbContext())
+          using (var ctx = new ApplicationDbContext())
             {
                 ctx.Invoices.Add(entity);
-                return ctx.SaveChanges() == 1;
+                return ctx.SaveChanges() == 1; // Look up what 0 and 1 due
             }
         }
 
@@ -41,7 +41,9 @@ namespace YMCAProject.Services
                 var entity =
                     ctx
                     .Invoices
+
                     .Single(e => e.InvoiceID == invoiceID);
+              
                 return
                    new InvoiceDetail
                    {
@@ -65,6 +67,7 @@ namespace YMCAProject.Services
                     .Invoices
                     .Select(
                         e => new InvoiceListItem
+                  
                         {
                             InvoiceID = e.InvoiceID,
                             // MemberID = e.MemberID,                            
@@ -75,6 +78,7 @@ namespace YMCAProject.Services
                             InvoiceIsPaid = e.InvoiceIsPaid,
                             CreatedUtc = e.CreatedUtc,
                             ModifiedUtc = e.ModifiedUtc,
+
                         }
                     );
 
@@ -99,7 +103,9 @@ namespace YMCAProject.Services
                 return ctx.SaveChanges() == 1;
             };
         }
-        public bool DeleteInvoice(int invoiceID)
+
+      public bool DeleteInvoice(int invoiceID)
+
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -107,6 +113,7 @@ namespace YMCAProject.Services
                 ctx
                       .Invoices
                       .Single(e => e.InvoiceID == invoiceID);
+
 
                 ctx.Invoices.Remove(entity);
 

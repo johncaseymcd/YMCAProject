@@ -21,4 +21,4 @@ namespace YMCAProject.Models
         [Display(Name = "Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
     }
-}
+}            
