@@ -28,6 +28,9 @@ namespace YMCAProject.Data
         public decimal InvoiceAmount { get; set; }
         [Required]
         public bool InvoiceIsPaid { get; set; }
+        // Stretch Goal
+        // [Required|
+        public virtual List<Course> Courses { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Modified")]
