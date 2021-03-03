@@ -9,5 +9,12 @@ namespace YMCAProject.Data
     public class Location
     {
         public int LocationID { get; set; }
+
+        public virtual ICollection<Instructor> Instructors { get; set; } = new List<Instructor>();
+
+        public Location()
+        {
+            Instructors = new HashSet<Instructor>();
+        }
     }
 }
