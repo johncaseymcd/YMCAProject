@@ -30,7 +30,7 @@ namespace YMCAProject.Services
           using (var ctx = new ApplicationDbContext())
             {
                 ctx.Invoices.Add(entity);
-                return ctx.SaveChanges() == 1; // Look up what 0 and 1 due
+                return ctx.SaveChanges() == 1;
             }
         }
 
@@ -94,11 +94,11 @@ namespace YMCAProject.Services
                     ctx
                     .Invoices
                     .Single(e => e.InvoiceID == model.InvoiceID);
-
+                                
                 entity.InvoiceDescription = model.InvoiceDescription;
                 entity.InvoiceDueDate = model.InvoiceDueDate;
                 entity.InvoiceAmount = model.InvoiceAmount;
-                entity.InvoiceIsPaid = model.InvocieIsPaid;
+                entity.InvoiceIsPaid = model.InvoiceIsPaid;
 
                 return ctx.SaveChanges() == 1;
             };

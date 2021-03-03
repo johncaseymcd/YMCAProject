@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace YMCAProject.Models
 {
     public class InvoiceCreate
-
     {
         [Required]
         public int InvoiceID { get; set; }
