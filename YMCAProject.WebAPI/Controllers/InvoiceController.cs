@@ -44,7 +44,7 @@ namespace YMCAProject.WebAPI.Controllers
         }
 
         [HttpPut]
-        [Route("api/Invocie/{id}")]
+        [Route("api/Invoice/{id}")]
         public IHttpActionResult PutInvoice([FromBody] InvoiceEdit invoice)
         {
             if (!ModelState.IsValid)

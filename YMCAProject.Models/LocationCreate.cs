@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YMCAProject.Data
+namespace YMCAProject.Models
 {
-    public class Location
+    public class LocationCreate
     {
-        [Key]
+        [Required]
         public int LocationID { get; set; }
         [Required]
         public string LocationName { get; set; }

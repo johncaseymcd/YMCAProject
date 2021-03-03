@@ -7,13 +7,13 @@ namespace YMCAProject.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class FixedMemberID : IMigrationMetadata
+    public sealed partial class Migration4 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(FixedMemberID));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Migration4));
         
         string IMigrationMetadata.Id
         {
-            get { return "202102260009234_FixedMemberID"; }
+            get { return "202103030238242_Migration4+"; }
         }
         
         string IMigrationMetadata.Source

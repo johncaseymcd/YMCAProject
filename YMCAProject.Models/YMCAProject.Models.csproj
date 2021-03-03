@@ -94,6 +94,10 @@
     <Compile Include="CourseDetail.cs" />
     <Compile Include="CourseEdit.cs" />
     <Compile Include="CourseListItem.cs" />
+    <Compile Include="LocationCreate.cs" />
+    <Compile Include="LocationDetail.cs" />
+    <Compile Include="LocationEdit.cs" />
+    <Compile Include="LocationListItem.cs" />
     <Compile Include="MemberCreate.cs" />
     <Compile Include="MemberDetail.cs" />
     <Compile Include="MemberEdit.cs" />
