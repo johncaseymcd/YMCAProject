@@ -151,13 +151,9 @@
     <Compile Include="Invoice.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Member.cs" />
-    <Compile Include="Migrations\202103030238242_Migration4+.cs" />
-    <Compile Include="Migrations\202103030238242_Migration4+.designer.cs">
-      <DependentUpon>202103030238242_Migration4+.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202103030458431_Migration5.cs" />
-    <Compile Include="Migrations\202103030458431_Migration5.designer.cs">
-      <DependentUpon>202103030458431_Migration5.cs</DependentUpon>
+    <Compile Include="Migrations\202103031229020_locamigration.cs" />
+    <Compile Include="Migrations\202103031229020_locamigration.designer.cs">
+      <DependentUpon>202103031229020_locamigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -167,11 +163,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202103030238242_Migration4+.resx">
-      <DependentUpon>202103030238242_Migration4+.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103030458431_Migration5.resx">
-      <DependentUpon>202103030458431_Migration5.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202103031229020_locamigration.resx">
+      <DependentUpon>202103031229020_locamigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

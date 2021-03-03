@@ -20,7 +20,11 @@ namespace YMCAProject.Services
                 {
                     LocationID = model.LocationID,                   
                     LocationName = model.LocationName,
-                    LocationAddress = model.LocationAddress,
+                    LocationStreetNumber = model.LocationStreetNumber,
+                    LocationStreetName = model.LocationStreetName,
+                    LocationCity = model.LocationCity,
+                    LocationState = model.LocationState,
+                    LocationZipCode = model.LocationZipCode,
                     LocationPhoneNumber = model.LocationPhoneNumber,
                     LocationEmail = model.LocationEmail,                    
                 };
@@ -47,7 +51,11 @@ namespace YMCAProject.Services
                    {
                        LocationID = entity.LocationID,
                        LocationName = entity.LocationName,
-                       LocationAddress = entity.LocationAddress,
+                       LocationStreetNumber = entity.LocationStreetNumber,
+                       LocationStreetName = entity.LocationStreetName,
+                       LocationCity = entity.LocationCity,
+                       LocationState = entity.LocationState,
+                       LocationZipCode = entity.LocationZipCode,
                        LocationPhoneNumber = entity.LocationPhoneNumber,
                        LocationEmail = entity.LocationEmail,                       
                    };
@@ -67,7 +75,11 @@ namespace YMCAProject.Services
                         {
                             LocationID = e.LocationID,
                             LocationName = e.LocationName,
-                            LocationAddress = e.LocationAddress,
+                            LocationStreetNumber = e.LocationStreetNumber,
+                            LocationStreetName = e.LocationStreetName,
+                            LocationCity = e.LocationCity,
+                            LocationState = e.LocationState,
+                            LocationZipCode = e.LocationZipCode,
                             LocationPhoneNumber = e.LocationPhoneNumber,
                             LocationEmail = e.LocationEmail,
                         }
@@ -87,6 +99,11 @@ namespace YMCAProject.Services
                     .Single(e => e.LocationID == model.LocationID);
 
                 entity.LocationName = model.LocationName;
+                entity.LocationStreetNumber = model.LocationStreetNumber;
+                entity.LocationStreetName = model.LocationStreetName;
+                entity.LocationCity = model.LocationCity;
+                entity.LocationState = model.LocationState;
+                entity.LocationZipCode = model.LocationZipCode;
                 entity.LocationPhoneNumber = model.LocationPhoneNumber;
                 entity.LocationEmail = model.LocationEmail;                
 

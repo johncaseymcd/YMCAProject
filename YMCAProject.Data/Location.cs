@@ -14,7 +14,15 @@ namespace YMCAProject.Data
         [Required]
         public string LocationName { get; set; }
         [Required]
-        public string LocationAddress { get; set; }
+        public int LocationStreetNumber { get; set; }
+        [Required]
+        public string LocationStreetName { get; set; }
+        [Required]
+        public string LocationCity { get; set; }
+        [Required]
+        public string LocationState { get; set; }
+        [Required]
+        public int LocationZipCode { get; set; }
         [Required]
         public string LocationPhoneNumber { get; set; }
         [Required]
