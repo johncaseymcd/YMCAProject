@@ -7,13 +7,13 @@ namespace YMCAProject.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class locamigration : IMigrationMetadata
+    public sealed partial class LocationBranch : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(locamigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(LocationBranch));
         
         string IMigrationMetadata.Id
         {
-            get { return "202103031229020_locamigration"; }
+            get { return "202103031304409_LocationBranch"; }
         }
         
         string IMigrationMetadata.Source
