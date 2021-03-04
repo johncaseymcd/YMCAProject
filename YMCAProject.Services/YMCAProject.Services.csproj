@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CourseService.cs" />
+    <Compile Include="InstructorService.cs" />
     <Compile Include="MemberService.cs" />
     <Compile Include="InvoiceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
