@@ -101,6 +101,10 @@
     <Compile Include="InstructorDetail.cs" />
     <Compile Include="InstructorEdit.cs" />
     <Compile Include="InstructorListItem.cs" />
+    <Compile Include="LocationCreate.cs" />
+    <Compile Include="LocationDetail.cs" />
+    <Compile Include="LocationEdit.cs" />
+    <Compile Include="LocationListItem.cs" />
     <Compile Include="MemberCreate.cs" />
     <Compile Include="MemberDetail.cs" />
     <Compile Include="MemberEdit.cs" />

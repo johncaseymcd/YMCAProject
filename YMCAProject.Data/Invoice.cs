@@ -25,12 +25,8 @@ namespace YMCAProject.Data
         [Required]
         public DateTimeOffset InvoiceDueDate { get; set; }
         [Required]
-        public decimal InvoiceAmount { get; set; }
-        [Required]
+        public decimal InvoiceAmount { get; set; }       
         public bool InvoiceIsPaid { get; set; }
-        // Stretch Goal
-        // [Required|
-        public virtual List<Course> Courses { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Modified")]

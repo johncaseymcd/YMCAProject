@@ -13,6 +13,6 @@ namespace YMCAProject.Models
         public string InvoiceDescription { get; set; }
         public DateTimeOffset InvoiceDueDate { get; set; }
         public decimal InvoiceAmount { get; set; }
-        public bool InvocieIsPaid { get; set; }
+        public bool InvoiceIsPaid { get; set; }
     }
 }
