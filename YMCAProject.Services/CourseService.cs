@@ -150,25 +150,6 @@ namespace YMCAProject.Services
 
         // Stretch goal
         // ------------
-        //public bool AddCourseToCourse(int courseID, int courseID)
-        //{
-          //  using (var ctx = new ApplicationDbContext())
-            //{
-              //  var courseinvoice =
-                //    ctx.Courses
-                  //      .Single(e => e.CourseID == courseID);
-        
-                //var course =
-                  //  ctx.Courses
-                    //    .Single(e => e.CourseID == courseID);
-
-                //course.Courses.Add(course);
-                //return ctx.SaveChanges() > 0;
-            //}
-        //}
-
-        // Stretch goal
-        // ------------
         public IEnumerable<CourseListItem> GetCoursesByInstructor(int instructorID)
         {
             using (var ctx = new ApplicationDbContext())
@@ -228,6 +209,24 @@ namespace YMCAProject.Services
                         );
                 
                     return query.ToList();
+            }
+        }
+
+        public bool AddCourseToInvoice(int courseID, int invoiceID)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var course =
+                    ctx.Courses
+                    .Single(e => e.CourseID == courseID);
+
+                var invoice =
+                    ctx.Invoices
+                    .Single(e => e.InvoiceID == invoiceID);
+
+                invoice.ListOfCourses.Add(course);
+
+                return ctx.SaveChanges() > 0;
             }
         }
 
