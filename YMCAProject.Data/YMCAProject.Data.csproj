@@ -153,9 +153,9 @@
     <Compile Include="Member.cs" />
 
     <Compile Include="Migrations\202103041749223_finalrun.cs" />
-    <Compile Include="Migrations\202103041749223_finalrun.designer.cs">
-      <DependentUpon>202103041749223_finalrun.cs</DependentUpon>
-
+	  <Compile Include="Migrations\202103041749223_finalrun.designer.cs">
+		  <DependentUpon>202103041749223_finalrun.cs</DependentUpon>
+	  </Compile>
     <Compile Include="Migrations\202103030156587_InitialMigration.cs" />
 	  <Compile Include="Migrations\202103030156587_InitialMigration.designer.cs">
 		  <DependentUpon>202103030156587_InitialMigration.cs</DependentUpon>
@@ -174,9 +174,9 @@
   </ItemGroup>
   <ItemGroup>
 
-    <EmbeddedResource Include="Migrations\202103041749223_finalrun.resx">
-      <DependentUpon>202103041749223_finalrun.cs</DependentUpon>
-
+	  <EmbeddedResource Include="Migrations\202103041749223_finalrun.resx">
+		  <DependentUpon>202103041749223_finalrun.cs</DependentUpon>
+	  </EmbeddedResource>
 	  <EmbeddedResource Include="Migrations\202103030156587_InitialMigration.resx">
 		  <DependentUpon>202103030156587_InitialMigration.cs</DependentUpon>
 	  </EmbeddedResource>
