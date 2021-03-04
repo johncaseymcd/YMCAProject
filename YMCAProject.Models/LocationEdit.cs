@@ -10,7 +10,7 @@ namespace YMCAProject.Models
     public class LocationEdit
     {
         public int LocationID { get; set; }
-        public string LocationName { get; set; }        
+        public string LocationName { get; set; }
         public int LocationStreetNumber { get; set; }
         public string LocationStreetName { get; set; }
         public string LocationCity { get; set; }

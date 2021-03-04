@@ -4,13 +4,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YMCAProject.Data;
 
 namespace YMCAProject.Models
 {
     public class LocationListItem
     {
         public int LocationID { get; set; }
-        public string LocationName { get; set; }        
+        public string LocationName { get; set; }
         public int LocationStreetNumber { get; set; }
         public string LocationStreetName { get; set; }
         public string LocationCity { get; set; }

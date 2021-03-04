@@ -12,20 +12,16 @@ namespace YMCAProject.Data
     {
         [Key]
         public int InvoiceID { get; set; }
-        //[Required]
-        //[ForeignKey(nameof(Members))]
-        //public int MemberID { get; set; }
-        //[Required]
-        //public virtual Member Members { get; set; }
-        //[Required]          
-        [Required]
-        public DateTimeOffset InvoiceDate { get; set; }
+        [ForeignKey(nameof(Member))]
+        public int MemberID { get; set; }
+        public virtual Member Member { get; set; }
         [Required]
         public string InvoiceDescription { get; set; }
+        public virtual List<Course> CoursesTaken { get; set; } = new List<Course>();
         [Required]
         public DateTimeOffset InvoiceDueDate { get; set; }
         [Required]
-        public decimal InvoiceAmount { get; set; }       
+        public decimal InvoiceAmount { get; set; }
         public bool InvoiceIsPaid { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
