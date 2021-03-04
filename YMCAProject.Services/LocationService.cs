@@ -15,10 +15,9 @@ namespace YMCAProject.Services
 
         public bool CreateLocation(LocationCreate model)
         {
-            var entity =
-                new Location()
-                {
-                    LocationID = model.LocationID,                   
+            var entity = new Location()
+            {
+                    LocationID = model.LocationID,
                     LocationName = model.LocationName,
                     LocationStreetNumber = model.LocationStreetNumber,
                     LocationStreetName = model.LocationStreetName,
@@ -26,8 +25,8 @@ namespace YMCAProject.Services
                     LocationState = model.LocationState,
                     LocationZipCode = model.LocationZipCode,
                     LocationPhoneNumber = model.LocationPhoneNumber,
-                    LocationEmail = model.LocationEmail,                    
-                };
+                    LocationEmail = model.LocationEmail,
+            };
 
             using (var ctx = new ApplicationDbContext())
             {
@@ -40,16 +39,15 @@ namespace YMCAProject.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
+                var entity = ctx
                     .Locations
-
                     .Single(e => e.LocationID == locationID);
 
                 return
                    new LocationDetail
                    {
                        LocationID = entity.LocationID,
+                       ListOfMembers = entity.ListOfMembers,
                        LocationName = entity.LocationName,
                        LocationStreetNumber = entity.LocationStreetNumber,
                        LocationStreetName = entity.LocationStreetName,
@@ -57,7 +55,7 @@ namespace YMCAProject.Services
                        LocationState = entity.LocationState,
                        LocationZipCode = entity.LocationZipCode,
                        LocationPhoneNumber = entity.LocationPhoneNumber,
-                       LocationEmail = entity.LocationEmail,                       
+                       LocationEmail = entity.LocationEmail,
                    };
             }
         }
@@ -66,14 +64,13 @@ namespace YMCAProject.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query =
-                    ctx
+                var query = ctx
                     .Locations
                     .Select(
                         e => new LocationListItem
 
                         {
-                            LocationID = e.LocationID,
+                            LocationID = e.LocationID,                            
                             LocationName = e.LocationName,
                             LocationStreetNumber = e.LocationStreetNumber,
                             LocationStreetName = e.LocationStreetName,
@@ -93,8 +90,7 @@ namespace YMCAProject.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
+                var entity = ctx
                     .Locations
                     .Single(e => e.LocationID == model.LocationID);
 
@@ -105,7 +101,7 @@ namespace YMCAProject.Services
                 entity.LocationState = model.LocationState;
                 entity.LocationZipCode = model.LocationZipCode;
                 entity.LocationPhoneNumber = model.LocationPhoneNumber;
-                entity.LocationEmail = model.LocationEmail;                
+                entity.LocationEmail = model.LocationEmail;
 
                 return ctx.SaveChanges() == 1;
             };
@@ -116,11 +112,9 @@ namespace YMCAProject.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                ctx
-                      .Locations
-                      .Single(e => e.LocationID == locationID);
-
+                var entity = ctx
+                    .Locations
+                    .Single(e => e.LocationID == locationID);
 
                 ctx.Locations.Remove(entity);
 

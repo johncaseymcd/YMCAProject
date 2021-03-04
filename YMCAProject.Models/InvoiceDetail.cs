@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YMCAProject.Data;
 
 namespace YMCAProject.Models
 {
     public class InvoiceDetail
     {
         public int InvoiceID { get; set; }
-        // public int MemberID { get; set; }   
-        public DateTimeOffset InvoiceDate { get; set; }
+        public int MemberID { get; set; }
         public string InvoiceDescription { get; set; }
+        public ICollection<Course> CoursesTaken { get; set; }
         public DateTimeOffset InvoiceDueDate { get; set; }
         public decimal InvoiceAmount { get; set; }
         public bool InvoiceIsPaid { get; set; }

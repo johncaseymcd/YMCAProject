@@ -11,6 +11,7 @@ namespace YMCAProject.Data
     {
         [Key]
         public int LocationID { get; set; }
+        public virtual ICollection<Member> ListOfMembers { get; set; } = new List<Member>();
         [Required]
         public string LocationName { get; set; }
         [Required]

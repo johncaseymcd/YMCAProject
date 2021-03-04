@@ -15,19 +15,16 @@ namespace YMCAProject.Services
 
         public bool CreateInvoice(InvoiceCreate model)
         {
-            var entity =
-                new Invoice()
-                {
-                    InvoiceID = model.InvoiceID,
-                    // MemberID = model.MemberID,                
-                    InvoiceDate = model.InvoiceDate,
-                    InvoiceDescription = model.InvoiceDescription,
-                    InvoiceDueDate = model.InvoiceDueDate,
-                    InvoiceAmount = model.InvoiceAmount,
-                    InvoiceIsPaid = model.InvoiceIsPaid,
-                };
+            var entity = new Invoice()
+            {
+                MemberID = model.MemberID,
+                InvoiceDescription = model.InvoiceDescription,
+                InvoiceDueDate = model.InvoiceDueDate,
+                InvoiceAmount = model.InvoiceAmount,
+                InvoiceIsPaid = model.InvoiceIsPaid,
+            };
 
-          using (var ctx = new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
                 ctx.Invoices.Add(entity);
                 return ctx.SaveChanges() == 1;
@@ -38,22 +35,20 @@ namespace YMCAProject.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
+                var entity = ctx
                     .Invoices
-
                     .Single(e => e.InvoiceID == invoiceID);
-              
+
                 return
                    new InvoiceDetail
                    {
-                       InvoiceID = entity.InvoiceID,
-                       // MemberID = entity.MemberID,                       
-                       InvoiceDate = entity.InvoiceDate,
                        InvoiceDescription = entity.InvoiceDescription,
+                       CoursesTaken = entity.CoursesTaken,
                        InvoiceDueDate = entity.InvoiceDueDate,
                        InvoiceAmount = entity.InvoiceAmount,
                        InvoiceIsPaid = entity.InvoiceIsPaid,
+                       CreatedUtc = entity.CreatedUtc,
+                       ModifiedUtc = entity.ModifiedUtc,
                    };
             }
         }
@@ -62,26 +57,19 @@ namespace YMCAProject.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query =
-                    ctx
+                var query = ctx
                     .Invoices
                     .Select(
                         e => new InvoiceListItem
-                  
+
                         {
                             InvoiceID = e.InvoiceID,
-                            // MemberID = e.MemberID,                            
-                            InvoiceDate = e.InvoiceDate,
-                            InvoiceDescription = e.InvoiceDescription,
+                            InvoiceDescription = e.InvoiceDescription,                            
                             InvoiceDueDate = e.InvoiceDueDate,
                             InvoiceAmount = e.InvoiceAmount,
-                            InvoiceIsPaid = e.InvoiceIsPaid,
-                            CreatedUtc = e.CreatedUtc,
-                            ModifiedUtc = e.ModifiedUtc,
-
+                            InvoiceIsPaid = e.InvoiceIsPaid,                            
                         }
                     );
-
                 return query.ToArray();
             }
         }
@@ -90,31 +78,28 @@ namespace YMCAProject.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
+                var entity = ctx
                     .Invoices
                     .Single(e => e.InvoiceID == model.InvoiceID);
                                 
                 entity.InvoiceDescription = model.InvoiceDescription;
                 entity.InvoiceDueDate = model.InvoiceDueDate;
                 entity.InvoiceAmount = model.InvoiceAmount;
-                entity.InvoiceIsPaid = model.InvoiceIsPaid;
+                entity.InvoiceIsPaid = model.InvoiceIsPaid;               
 
                 return ctx.SaveChanges() == 1;
             };
         }
 
-      public bool DeleteInvoice(int invoiceID)
+        public bool DeleteInvoice(int invoiceID)
 
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                ctx
-                      .Invoices
-                      .Single(e => e.InvoiceID == invoiceID);
-
-
+                var entity = ctx
+                    .Invoices
+                    .Single(e => e.InvoiceID == invoiceID);
+                
                 ctx.Invoices.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
