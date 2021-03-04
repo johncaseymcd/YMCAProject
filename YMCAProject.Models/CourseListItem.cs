@@ -21,9 +21,9 @@ namespace YMCAProject.Models
         public bool IsCurrentlyRunning { get; set; }
 
         // Stretch goal
-        // public Instructor Instructor { get; set; }
+        public Instructor Instructor { get; set; }
 
         // Stretch goal 
-        // public Location Location { get; set; }
+        public Location Location { get; set; }
     }
 }
