@@ -32,12 +32,8 @@ namespace YMCAProject.WebAPI.Data
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<Course> Courses { get; set; }
-
-        // Stretch goal?
-        // public DbSet<Location> Locations { get; set; }
-
-        // Stretch goal?
-        // public DbSet<Instructor> Instructors { get; set; }
+        public DbSet<Location> Locations { get; set; }
+        public DbSet<Instructor> Instructors { get; set; }
 
         public static ApplicationDbContext Create()
         {
