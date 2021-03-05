@@ -10,8 +10,6 @@ namespace YMCAProject.Models
     public class InstructorCreate
     {
         [Required]
-        public int InstructorID { get; set; }
-        [Required]
         public string InstructorName { get; set; }
         [Required]
         public int LocationID { get; set; }
