@@ -20,13 +20,14 @@ namespace YMCAProject.Services
         public bool CreateMember(MemberCreate model)
         {
             var entity = new Member
-                {
-                    //MemberID = model.MemberID,
-                    DateJoined = model.DateJoined,
-                    Name = model.Name,
-                    Email = model.Email,
-                    Address = model.Address,
-                    PhoneNumber = model.PhoneNumber,
+            {
+                //MemberID = model.MemberID,
+                DateJoined = model.DateJoined,
+                Name = model.Name,
+                Email = model.Email,
+                Address = model.Address,
+                PhoneNumber = model.PhoneNumber,
+                LocationID = model.LocationID
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -74,6 +75,7 @@ namespace YMCAProject.Services
                         CreditCardNumber = entity.CreditCardNumber,
                         ExpirationDate = entity.ExpirationDate,
                         SecurityCode = entity.SecurityCode,
+                        LocationID = entity.LocationID
                     };
             }
         }
@@ -81,11 +83,11 @@ namespace YMCAProject.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
+                var entity = ctx
                     .Members
                     .Single(e => e.MemberID == model.MemberID);
-                entity.MemberID = model.MemberID;
+
+                //entity.MemberID = model.MemberID;
                 entity.Name = model.Name;
                 entity.Email = model.Email;
                 entity.Address = model.Address;
@@ -93,6 +95,7 @@ namespace YMCAProject.Services
                 entity.CreditCardNumber = model.CreditCardNumber;
                 entity.ExpirationDate = model.ExpirationDate;
                 entity.SecurityCode = model.SecurityCode;
+                entity.LocationID = model.LocationID;
 
                 return ctx.SaveChanges() == 1;
             }

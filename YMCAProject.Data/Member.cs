@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace YMCAProject.Data
 {
@@ -26,5 +27,8 @@ namespace YMCAProject.Data
         public long CreditCardNumber { get; set; }
         public string ExpirationDate { get; set; }
         public int SecurityCode { get; set; }
+        [ForeignKey(nameof(Location))]
+        public int LocationID { get; set; }
+        public virtual Location Location { get; set; }
     }
 }

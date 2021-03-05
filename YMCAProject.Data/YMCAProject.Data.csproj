@@ -151,19 +151,9 @@
     <Compile Include="Invoice.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Member.cs" />
-
-    <Compile Include="Migrations\202103041749223_finalrun.cs" />
-	  <Compile Include="Migrations\202103041749223_finalrun.designer.cs">
-		  <DependentUpon>202103041749223_finalrun.cs</DependentUpon>
-	  </Compile>
-    <Compile Include="Migrations\202103030156587_InitialMigration.cs" />
-	  <Compile Include="Migrations\202103030156587_InitialMigration.designer.cs">
-		  <DependentUpon>202103030156587_InitialMigration.cs</DependentUpon>
-	  </Compile>
-    <Compile Include="Migrations\202103031304409_LocationBranch.cs" />
-    <Compile Include="Migrations\202103031304409_LocationBranch.designer.cs">
-      <DependentUpon>202103031304409_LocationBranch.cs</DependentUpon>
-
+    <Compile Include="Migrations\202103050040107_InitialMigration.cs" />
+    <Compile Include="Migrations\202103050040107_InitialMigration.designer.cs">
+      <DependentUpon>202103050040107_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -173,16 +163,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-
-	  <EmbeddedResource Include="Migrations\202103041749223_finalrun.resx">
-		  <DependentUpon>202103041749223_finalrun.cs</DependentUpon>
-	  </EmbeddedResource>
-	  <EmbeddedResource Include="Migrations\202103030156587_InitialMigration.resx">
-		  <DependentUpon>202103030156587_InitialMigration.cs</DependentUpon>
-	  </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103031304409_LocationBranch.resx">
-      <DependentUpon>202103031304409_LocationBranch.cs</DependentUpon>
-
+    <EmbeddedResource Include="Migrations\202103050040107_InitialMigration.resx">
+      <DependentUpon>202103050040107_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

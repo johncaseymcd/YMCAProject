@@ -224,7 +224,7 @@ namespace YMCAProject.Services
                     ctx.Invoices
                     .Single(e => e.InvoiceID == invoiceID);
 
-                invoice.ListOfCourses.Add(course);
+                //invoice.ListOfCourses.Add(course);
 
                 return ctx.SaveChanges() > 0;
             }
