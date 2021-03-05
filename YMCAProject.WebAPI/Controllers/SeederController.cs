@@ -19,5 +19,15 @@ namespace YMCAProject.WebAPI.Controllers
                 return InternalServerError();
             return Ok("Database contents successfully pre-filled.");
         }
+
+        [HttpDelete]
+        [Route("api/clear")]
+        public IHttpActionResult ClearDatabase()
+        {
+            var svc = new SeederService();
+            if (!svc.ClearDatabase())
+                return InternalServerError();
+            return Ok("Database contents successfully cleared.");
+        }
     }
 }
