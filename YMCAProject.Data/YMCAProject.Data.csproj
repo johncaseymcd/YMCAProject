@@ -159,6 +159,10 @@
     <Compile Include="Migrations\202103042300024_InstructorTesting.designer.cs">
       <DependentUpon>202103042300024_InstructorTesting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103050156140_TestingSeeder.cs" />
+    <Compile Include="Migrations\202103050156140_TestingSeeder.designer.cs">
+      <DependentUpon>202103050156140_TestingSeeder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -172,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103042300024_InstructorTesting.resx">
       <DependentUpon>202103042300024_InstructorTesting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103050156140_TestingSeeder.resx">
+      <DependentUpon>202103050156140_TestingSeeder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

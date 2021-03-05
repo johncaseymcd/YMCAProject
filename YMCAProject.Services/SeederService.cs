@@ -210,7 +210,27 @@ namespace YMCAProject.Services
 
             // Perform relational assignments and calculations
             // -----------------------------------------------
+            firstMember.CoursesTaken.Add(secondCourse);
+            secondMember.CoursesTaken.Add(firstCourse);
+            thirdMember.CoursesTaken.Add(thirdCourse);
 
+            firstCourse.ListOfMembers.Add(secondMember);
+            secondCourse.ListOfMembers.Add(firstMember);
+            thirdCourse.ListOfMembers.Add(thirdMember);
+
+            firstInvoice.CoursesTaken = firstMember.CoursesTaken;
+            secondInvoice.CoursesTaken = secondMember.CoursesTaken;
+            thirdInvoice.CoursesTaken = thirdMember.CoursesTaken;
+
+            firstMember.Invoices.Add(firstInvoice);
+            secondMember.Invoices.Add(secondInvoice);
+            thirdMember.Invoices.Add(thirdInvoice);
+
+            firstInstructor.CoursesTaught.Add(firstCourse);
+            secondInstructor.CoursesTaught.Add(secondCourse);
+            thirdInstructor.CoursesTaught.Add(thirdCourse);
+
+            return ctx.SaveChanges() > 0;
         }
     }
 }
