@@ -67,7 +67,7 @@ namespace YMCAProject.WebAPI.Controllers
         // Stretch goal
         // ------------
         [HttpPost]
-        [Route("api/Course/{courseID}billto/{invoiceID}")]
+        [Route("api/Course/{courseID}/billto/{invoiceID}")]
         public IHttpActionResult AddCourseToInvoice([FromUri] int courseID, [FromUri] int invoiceID)
         {
             var service = new CourseService();

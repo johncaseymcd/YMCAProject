@@ -22,6 +22,7 @@ namespace YMCAProject.Data
         public DateTimeOffset InvoiceDueDate { get; set; }
         [Required]
         public decimal MonthlyFee { get; set; }
+
         public decimal InvoiceAmount
         {
             get
