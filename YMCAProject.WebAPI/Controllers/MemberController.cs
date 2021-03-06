@@ -40,11 +40,11 @@ namespace YMCAProject.WebAPI.Controllers
             if (!service.CreateMember(member))
                 return InternalServerError();
 
-            return Ok();
+            return Ok("Member added!");
         }
         [HttpGet]
         [Route("api/Member/{id}")]
-        public IHttpActionResult GetMemberByID(int id)
+        public IHttpActionResult GetMemberByID([FromUri] int id)
         {
             MemberService memberService = CreateMemberService();
             var member = memberService.GetMemberByID(id);
@@ -52,7 +52,7 @@ namespace YMCAProject.WebAPI.Controllers
         }
         [HttpPut]
         [Route("api/Member/{id}")]
-        public IHttpActionResult Put(MemberEdit member)
+        public IHttpActionResult Put([FromBody] MemberEdit member)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -61,7 +61,7 @@ namespace YMCAProject.WebAPI.Controllers
             if (!service.UpdateMember(member))
                 return InternalServerError();
 
-            return Ok();
+            return Ok("Member updated!");
         }
         [HttpDelete]
         [Route("api/Member/{id}")]
@@ -72,7 +72,7 @@ namespace YMCAProject.WebAPI.Controllers
             if (!service.DeleteMember(id))
                 return InternalServerError();
 
-            return Ok();
+            return Ok("Member Deleted!");
         }
     }
 }

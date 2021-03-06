@@ -17,7 +17,7 @@ namespace YMCAProject.Services
         {
             var entity = new Location()
             {
-                    LocationID = model.LocationID,
+                    //LocationID = model.LocationID,
                     LocationName = model.LocationName,
                     LocationStreetNumber = model.LocationStreetNumber,
                     LocationStreetName = model.LocationStreetName,

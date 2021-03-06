@@ -21,5 +21,8 @@ namespace YMCAProject.Models
         public string Address { get; set; }
         [Required]
         public string PhoneNumber { get; set; }
+        [Required]
+        public int LocationID { get; set; }
+
     }
 }
