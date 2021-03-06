@@ -10,7 +10,6 @@ using YMCAProject.Services;
 
 namespace YMCAProject.WebAPI.Controllers
 {
-    [Authorize]
     public class MemberController : ApiController
     {
 
