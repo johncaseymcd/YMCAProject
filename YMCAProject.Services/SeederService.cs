@@ -110,6 +110,7 @@ namespace YMCAProject.Services
                 InvoiceID = 1,
                 MemberID = 1,
                 InvoiceDescription = "Monthly Billing Cycle for February 2021",
+                MonthlyFee = 29.99m,
                 InvoiceDueDate = new DateTime(2021, 03, 15),
                 CreatedUtc = DateTimeOffset.Now
             };
@@ -120,6 +121,7 @@ namespace YMCAProject.Services
                 InvoiceID = 2,
                 MemberID = 2,
                 InvoiceDescription = "Monthly Billing Cycle for February 2021",
+                MonthlyFee = 24.99m,
                 InvoiceDueDate = new DateTime(2021, 03, 15),
                 CreatedUtc = DateTimeOffset.Now
             };
@@ -130,6 +132,7 @@ namespace YMCAProject.Services
                 InvoiceID = 3,
                 MemberID = 3,
                 InvoiceDescription = "Monthly Billing Cycle for February 2021",
+                MonthlyFee = 29.99m,
                 InvoiceDueDate = new DateTime(2021, 03, 15),
                 CreatedUtc = DateTimeOffset.Now
             };

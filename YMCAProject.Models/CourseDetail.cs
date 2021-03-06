@@ -15,7 +15,7 @@ namespace YMCAProject.Models
         public decimal CourseCost { get; set; }
         public int MaxCourseSize { get; set; }
         public bool HasAvailability { get; set; }
-        public ICollection<Member> ListOfMembers { get; set; }
+        public List<string> ListOfMembers { get; set; }
 
         // Stretch goal
         public DateTime CourseStartDate { get; set; }

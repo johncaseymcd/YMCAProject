@@ -36,7 +36,7 @@ namespace YMCAProject.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("api/Instructor/{id}")]
+        [Route("api/Instructor/{instructorID}")]
         public IHttpActionResult GetInstructorByID([FromUri] int instructorID)
         {
             var svc = new InstructorService();
@@ -45,7 +45,7 @@ namespace YMCAProject.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("api/Instructor/Location/{id}")]
+        [Route("api/Instructor/Location/{locationID}")]
         public IHttpActionResult GetInstructorsByLocation([FromUri] int locationID)
         {
             var svc = new InstructorService();
@@ -54,7 +54,7 @@ namespace YMCAProject.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("api/Instructor/Course/{id}")]
+        [Route("api/Instructor/Course/{courseID}")]
         public IHttpActionResult GetInstructorsByCourse([FromUri] int courseID)
         {
             var svc = new InstructorService();
