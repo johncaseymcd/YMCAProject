@@ -230,7 +230,45 @@ namespace YMCAProject.Services
             secondInstructor.CoursesTaught.Add(secondCourse);
             thirdInstructor.CoursesTaught.Add(thirdCourse);
 
+            firstLocation.ListOfMembers.Add(firstMember);
+            secondLocation.ListOfMembers.Add(secondMember);
+            thirdLocation.ListOfMembers.Add(thirdMember);
+
             return ctx.SaveChanges() > 0;
+        }
+
+        // Clear existing entries in database
+        public bool ClearDatabase()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                foreach(var course in ctx.Courses)
+                {
+                    ctx.Courses.Remove(course);
+                }
+
+                foreach(var instructor in ctx.Instructors)
+                {
+                    ctx.Instructors.Remove(instructor);
+                }
+
+                foreach(var invoice in ctx.Invoices)
+                {
+                    ctx.Invoices.Remove(invoice);
+                }
+
+                foreach(var location in ctx.Locations)
+                {
+                    ctx.Locations.Remove(location);
+                }
+
+                foreach(var member in ctx.Members)
+                {
+                    ctx.Members.Remove(member);
+                }
+
+                return ctx.SaveChanges() > 0;
+            }
         }
     }
 }
