@@ -12,25 +12,37 @@ namespace YMCAProject.Data
     {
         [Key]
         public int InvoiceID { get; set; }
-        [Required]
-        [ForeignKey(nameof(Members))]
+        [ForeignKey(nameof(Member))]
         public int MemberID { get; set; }
-        public virtual Member Members { get; set; }
-        [Required]
-        public object InvoiceNumber { get; set; }
-        [Required]
-        public DateTime InvoiceDate { get; set; }
+        public virtual Member Member { get; set; }
         [Required]
         public string InvoiceDescription { get; set; }
+        public virtual List<Course> CoursesTaken { get; set; } = new List<Course>();
         [Required]
-        public DateTime InvoiceDueDate { get; set; }
+        public DateTimeOffset InvoiceDueDate { get; set; }
         [Required]
-        public decimal InvoiceAmount { get; set; }
-        [Required] 
-        public bool InvoiceIsPaid { get; set; }
+        public decimal MonthlyFee { get; set; }
+        public decimal InvoiceAmount
+        {
+            get
+            {
+                decimal courseTotal = 0;
+                foreach (var course in CoursesTaken)
+                {
+                    courseTotal += course.CourseCost;
+                }
 
-        // Stretch Goal
-        // [Required|
-        // Public virtual List<Course> Course { get; set; }
+                decimal totalAmount = courseTotal + MonthlyFee;
+
+                return totalAmount;                     
+            }
+
+            set { }
+        }
+        public bool InvoiceIsPaid { get; set; }
+        [Display(Name = "Created")]
+        public DateTimeOffset CreatedUtc { get; set; }
+        [Display(Name = "Modified")]
+        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }
