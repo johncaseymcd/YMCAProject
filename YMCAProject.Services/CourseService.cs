@@ -68,7 +68,11 @@ namespace YMCAProject.Services
                     ctx
                         .Courses
                         .Single(e => e.CourseID == courseID);
-
+                var memberNames = new List<string>();
+                foreach(var member in entity.ListOfMembers)
+                {
+                    memberNames.Add(member.Name);
+                }
                 return
                     new CourseDetail
                     {
@@ -78,7 +82,7 @@ namespace YMCAProject.Services
                         CourseCost = entity.CourseCost,
                         MaxCourseSize = entity.MaxCourseSize,
                         HasAvailability = entity.ListOfMembers.Count < entity.MaxCourseSize,
-                        ListOfMembers = entity.ListOfMembers,
+                        ListOfMembers = memberNames,
                         CourseStartDate = entity.CourseStartDate,
                         CourseEndDate = entity.CourseEndDate,
                         IsCurrentlyRunning = entity.IsCurrentlyRunning,
