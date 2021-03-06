@@ -38,12 +38,16 @@ namespace YMCAProject.Services
                 var entity = ctx
                     .Invoices
                     .Single(e => e.InvoiceID == invoiceID);
-
+                var courseNames = new List<string>();
+                foreach(var course in entity.CoursesTaken)
+                {
+                    courseNames.Add(course.CourseName);
+                }
                 return
                    new InvoiceDetail
                    {
                        InvoiceDescription = entity.InvoiceDescription,
-                       CoursesTaken = entity.CoursesTaken,
+                       CoursesTaken = courseNames,
                        InvoiceDueDate = entity.InvoiceDueDate,
                        MonthlyFee = entity.MonthlyFee,
                        InvoiceAmount = entity.InvoiceAmount,
