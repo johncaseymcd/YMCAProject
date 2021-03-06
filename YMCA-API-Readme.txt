@@ -14,7 +14,7 @@ d. Resolving DbEntity validation errors: https://stackoverflow.com/questions/158
 
 2.      Getting Started
 
-The Web API utilizes .Net 4.8, Entity Framework 6.0, and Owin 2.3.3 and all dependents of those projects. A full list of dependencies can be found in the Web.Config file of the WebAPI Project in Github. 
+The Web API utilizes .Net 4.8, Entity Framework 6.0, and Owin 2.3.3 and all dependents of those projects. A full list of dependencies can be found in the Web.Config file of the WebAPI Project in Github. The project uses Individual User Account authentication and will require account creation and auth values for requests.
 
 3.      Usage and Endpoints
 
