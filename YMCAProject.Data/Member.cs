@@ -20,6 +20,9 @@ namespace YMCAProject.Data
         public string Email { get; set; }
         [Required]
         public string Address { get; set; }
+        [ForeignKey(nameof(Location))]
+        public int LocationID { get; set; }
+        public virtual Location Location { get; set; }
         [Required]
         public string PhoneNumber { get; set; }
         public virtual List<Course> CoursesTaken { get; set; } = new List<Course>();
