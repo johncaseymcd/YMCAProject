@@ -151,9 +151,9 @@
     <Compile Include="Invoice.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Member.cs" />
-    <Compile Include="Migrations\202103050040107_InitialMigration.cs" />
-    <Compile Include="Migrations\202103050040107_InitialMigration.designer.cs">
-      <DependentUpon>202103050040107_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202103061450555_NewUpdate.cs" />
+    <Compile Include="Migrations\202103061450555_NewUpdate.designer.cs">
+      <DependentUpon>202103061450555_NewUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -163,8 +163,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202103050040107_InitialMigration.resx">
-      <DependentUpon>202103050040107_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202103061450555_NewUpdate.resx">
+      <DependentUpon>202103061450555_NewUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

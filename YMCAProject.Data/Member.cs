@@ -30,8 +30,5 @@ namespace YMCAProject.Data
         public long CreditCardNumber { get; set; }
         public string ExpirationDate { get; set; }
         public int SecurityCode { get; set; }
-        [ForeignKey(nameof(Location))]
-        public int LocationID { get; set; }
-        public virtual Location Location { get; set; }
     }
 }
