@@ -47,12 +47,12 @@ namespace YMCAProject.Services
                                 CourseName = e.CourseName,
                                 CourseCost = e.CourseCost,
                                 MaxCourseSize = e.MaxCourseSize,
-                                HasAvailability = e.HasAvailability,
+                                HasAvailability = e.ListOfMembers.Count < e.MaxCourseSize,
                                 CourseStartDate = e.CourseStartDate,
                                 CourseEndDate = e.CourseEndDate,
                                 IsCurrentlyRunning = e.IsCurrentlyRunning,
-                                Instructor = e.Instructor,
-                                Location = e.Location,
+                                InstructorID = e.InstructorID,
+                                LocationID = e.LocationID,
                             }
                         );
 
@@ -77,13 +77,13 @@ namespace YMCAProject.Services
                         CourseDescription = entity.CourseDescription,
                         CourseCost = entity.CourseCost,
                         MaxCourseSize = entity.MaxCourseSize,
-                        HasAvailability = entity.HasAvailability,
-                        ListOfMembers = entity.ListOfMembers,
+                        HasAvailability = entity.ListOfMembers.Count < entity.MaxCourseSize,
+                        //ListOfMembers = entity.ListOfMembers,
                         CourseStartDate = entity.CourseStartDate,
                         CourseEndDate = entity.CourseEndDate,
                         IsCurrentlyRunning = entity.IsCurrentlyRunning,
-                        Instructor = entity.Instructor,
-                        Location = entity.Location
+                        InstructorID = entity.InstructorID,
+                        LocationID = entity.LocationID
                     };
             }
         }
@@ -104,12 +104,12 @@ namespace YMCAProject.Services
                             CourseName = e.CourseName,
                             CourseCost = e.CourseCost,
                             MaxCourseSize = e.MaxCourseSize,
-                            HasAvailability = e.HasAvailability,
+                            HasAvailability = e.ListOfMembers.Count < e.MaxCourseSize,
                             CourseStartDate = e.CourseStartDate,
                             CourseEndDate = e.CourseEndDate,
                             IsCurrentlyRunning = e.IsCurrentlyRunning,
-                            Instructor = e.Instructor,
-                            Location = e.Location
+                            InstructorID = e.InstructorID,
+                            LocationID = e.LocationID
                         }
                     );
 
@@ -139,8 +139,8 @@ namespace YMCAProject.Services
                                 CourseStartDate = e.CourseStartDate,
                                 CourseEndDate = e.CourseEndDate,
                                 IsCurrentlyRunning = e.IsCurrentlyRunning,
-                                Instructor = e.Instructor,
-                                Location = e.Location
+                                InstructorID = e.InstructorID,
+                                LocationID = e.LocationID
                             }
                         );
 
@@ -170,8 +170,8 @@ namespace YMCAProject.Services
                             CourseStartDate = e.CourseStartDate,
                             CourseEndDate = e.CourseEndDate,
                             IsCurrentlyRunning = e.IsCurrentlyRunning,
-                            Instructor = e.Instructor,
-                            Location = e.Location
+                            InstructorID = e.InstructorID,
+                            LocationID = e.LocationID
                         }
                     );
 
@@ -203,8 +203,8 @@ namespace YMCAProject.Services
                                 CourseStartDate = e.CourseStartDate,
                                 CourseEndDate = e.CourseEndDate,
                                 IsCurrentlyRunning = e.IsCurrentlyRunning,
-                                Instructor = e.Instructor,
-                                Location = e.Location
+                                InstructorID = e.InstructorID,
+                                LocationID = e.LocationID
                             }
                         );
                 
@@ -224,7 +224,7 @@ namespace YMCAProject.Services
                     ctx.Invoices
                     .Single(e => e.InvoiceID == invoiceID);
 
-                //invoice.ListOfCourses.Add(course);
+                invoice.CoursesTaken.Add(course);
 
                 return ctx.SaveChanges() > 0;
             }
@@ -245,8 +245,8 @@ namespace YMCAProject.Services
                 entity.MaxCourseSize = model.MaxCourseSize;
                 entity.CourseStartDate = model.CourseStartDate;
                 entity.CourseEndDate = model.CourseEndDate;
-                entity.Instructor = model.Instructor;
-                entity.Location = model.Location;
+                entity.InstructorID = model.InstructorID;
+                entity.LocationID = model.LocationID;
 
                 return ctx.SaveChanges() > 0;
             };

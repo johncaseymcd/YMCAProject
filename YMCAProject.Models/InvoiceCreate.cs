@@ -19,7 +19,7 @@ namespace YMCAProject.Models
         [Required]
         public DateTimeOffset InvoiceDueDate { get; set; }
         [Required]
-        public decimal InvoiceAmount { get; set; }
+        public decimal MonthlyFee { get; set; }
         [Required]
         public bool InvoiceIsPaid { get; set; }
     }

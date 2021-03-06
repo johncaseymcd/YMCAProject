@@ -11,6 +11,6 @@ namespace YMCAProject.Models
     {
         public int InstructorID { get; set; }
         public string InstructorName { get; set; }
-        public Location Location { get; set; }
+        public int LocationID { get; set; }
     }
 }

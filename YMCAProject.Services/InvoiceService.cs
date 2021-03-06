@@ -21,7 +21,6 @@ namespace YMCAProject.Services
                 InvoiceDescription = model.InvoiceDescription,
                 InvoiceDueDate = model.InvoiceDueDate,
                 MonthlyFee = model.MonthlyFee,
-                InvoiceAmount = model.InvoiceAmount,
                 InvoiceIsPaid = model.InvoiceIsPaid,
             };
 
@@ -39,12 +38,17 @@ namespace YMCAProject.Services
                 var entity = ctx
                     .Invoices
                     .Single(e => e.InvoiceID == invoiceID);
+                    var courseNames = new List<string>();
+                    foreach (var course in entity.CoursesTaken)
+                    {
+                    courseNames.Add(course.CourseName);
+                    }
 
                 return
                    new InvoiceDetail
                    {
                        InvoiceDescription = entity.InvoiceDescription,
-                       CoursesTaken = entity.CoursesTaken,
+                       CoursesTaken = courseNames,
                        InvoiceDueDate = entity.InvoiceDueDate,
                        MonthlyFee = entity.MonthlyFee,
                        InvoiceAmount = entity.InvoiceAmount,

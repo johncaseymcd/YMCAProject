@@ -28,5 +28,10 @@ namespace YMCAProject.Data
         public string LocationPhoneNumber { get; set; }
         [Required]
         public string LocationEmail { get; set; }
+
+        public Location()
+        {
+            ListOfMembers = new HashSet<Member>();
+        }
     }
 }

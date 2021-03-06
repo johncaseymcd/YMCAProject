@@ -37,7 +37,7 @@ namespace YMCAProject.Services
                         {
                             InstructorID = e.InstructorID,
                             InstructorName = e.InstructorName,
-                            Location = e.Location
+                            LocationID = e.LocationID
                         }
                     );
 
@@ -52,14 +52,24 @@ namespace YMCAProject.Services
                 var entity =
                     ctx.Instructors
                     .Single(e => e.InstructorID == instructorID);
+                var courseNames = new List<string>();
+                var memberNames = new List<string>();
+                foreach(var course in entity.CoursesTaught)
+                {
+                    courseNames.Add(course.CourseName);
+                }
+                foreach(var member in entity.MembersTaught)
+                {
+                    memberNames.Add(member.Name);
+                }
 
                 return new InstructorDetail
                 {
                     InstructorID = entity.InstructorID,
-                    InstrcutorName = entity.InstructorName,
-                    Location = entity.Location,
-                    CoursesTaught = entity.CoursesTaught,
-                    MembersTaught = entity.MembersTaught
+                    InstructorName = entity.InstructorName,
+                    LocationID = entity.LocationID,
+                    CoursesTaught = courseNames,
+                    MembersTaught = memberNames
                 };
             }
         }
@@ -76,7 +86,7 @@ namespace YMCAProject.Services
                         {
                             InstructorID = e.InstructorID,
                             InstructorName = e.InstructorName,
-                            Location = e.Location
+                            LocationID = e.LocationID
                         }
                     );
 
@@ -84,7 +94,7 @@ namespace YMCAProject.Services
             }
         }
 
-        public IEnumerable<InstructorListItem> GetInstructorsByCourse(int courseID)
+        public InstructorDetail GetInstructorsByCourse(int courseID)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -92,19 +102,26 @@ namespace YMCAProject.Services
                     ctx.Courses
                     .Single(e => e.CourseID == courseID);
 
-                var instructorQuery =
-                    ctx.Instructors
-                    .Where(e => e.CoursesTaught.Contains(courseEntity))
-                    .Select(
-                        e => new InstructorListItem
-                        {
-                            InstructorID = e.InstructorID,
-                            InstructorName = e.InstructorName,
-                            Location = e.Location
-                        }
-                    );
+                var instructor = courseEntity.Instructor;
+                var courseNames = new List<string>();
+                var memberNames = new List<string>();
+                foreach(var course in instructor.CoursesTaught)
+                {
+                    courseNames.Add(course.CourseName);
+                }
+                foreach(var member in instructor.MembersTaught)
+                {
+                    memberNames.Add(member.Name);
+                }
 
-                return instructorQuery.ToList();
+                return new InstructorDetail
+                {
+                    InstructorID = instructor.InstructorID,
+                    InstructorName = instructor.InstructorName,
+                    LocationID = instructor.LocationID,
+                    CoursesTaught = courseNames,
+                    MembersTaught = memberNames
+                };
             }
         }
 
@@ -117,7 +134,7 @@ namespace YMCAProject.Services
                     .Single(e => e.InstructorID == model.InstructorID);
 
                 entity.InstructorName = model.InstructorName;
-                entity.Location = model.Location;
+                entity.LocationID = model.LocationID;
 
                 return ctx.SaveChanges() > 0;
             }

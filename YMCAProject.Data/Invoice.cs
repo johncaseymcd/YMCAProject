@@ -22,6 +22,7 @@ namespace YMCAProject.Data
         public DateTimeOffset InvoiceDueDate { get; set; }
         [Required]
         public decimal MonthlyFee { get; set; }
+
         public decimal InvoiceAmount
         {
             get
@@ -32,7 +33,7 @@ namespace YMCAProject.Data
                     courseTotal += course.CourseCost;
                 }
 
-                decimal totalAmount = courseTotal + MonthlyFee;
+                decimal totalAmount = (courseTotal + MonthlyFee) * 1.07m;
 
                 return totalAmount;                     
             }

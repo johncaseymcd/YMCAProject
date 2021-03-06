@@ -10,9 +10,9 @@ namespace YMCAProject.Models
     public class InstructorDetail
     {
         public int InstructorID { get; set; }
-        public string InstrcutorName { get; set; }
-        public Location Location { get; set; }
-        public ICollection<Course> CoursesTaught { get; set; }
-        public ICollection<Member> MembersTaught { get; set; }
+        public string InstructorName { get; set; }
+        public int LocationID { get; set; }
+        public List<string> CoursesTaught { get; set; }
+        public List<string> MembersTaught { get; set; }
     }
 }

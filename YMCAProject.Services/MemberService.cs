@@ -63,6 +63,16 @@ namespace YMCAProject.Services
                     ctx
                     .Members
                     .Single(e => e.MemberID == id);
+                    var courseNames = new List<string>();
+                    var invoiceDesc = new List<string>();
+                    foreach (var course in entity.CoursesTaken)
+                    {
+                    courseNames.Add(course.CourseName);
+                    }
+                    foreach (var inv in entity.Invoices)
+                    {
+                    invoiceDesc.Add(inv.InvoiceDescription);
+                    }
                 return
                     new MemberDetail
                     {
@@ -75,7 +85,9 @@ namespace YMCAProject.Services
                         CreditCardNumber = entity.CreditCardNumber,
                         ExpirationDate = entity.ExpirationDate,
                         SecurityCode = entity.SecurityCode,
-                        LocationID = entity.LocationID
+                        LocationID = entity.LocationID,
+                        CoursesTaken = courseNames,
+                        Invoices = invoiceDesc
                     };
             }
         }

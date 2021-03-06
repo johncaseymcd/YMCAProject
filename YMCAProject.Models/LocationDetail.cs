@@ -11,7 +11,7 @@ namespace YMCAProject.Models
     public class LocationDetail
     {
         public int LocationID { get; set; }
-        public virtual ICollection<Member> ListOfMembers { get; set; }
+        public List<string> ListOfMembers { get; set; }
         public string LocationName { get; set; }
         public int LocationStreetNumber { get; set; }
         public string LocationStreetName { get; set; }
