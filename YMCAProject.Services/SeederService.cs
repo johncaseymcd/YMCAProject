@@ -237,6 +237,7 @@ namespace YMCAProject.Services
             return ctx.SaveChanges() > 0;
         }
 
+        // Clear existing entries in database
         public bool ClearDatabase()
         {
             using (var ctx = new ApplicationDbContext())
