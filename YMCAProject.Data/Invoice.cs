@@ -21,16 +21,24 @@ namespace YMCAProject.Data
         [Required]
         public DateTimeOffset InvoiceDueDate { get; set; }
         [Required]
+        public decimal MonthlyFee { get; set; }
+
         public decimal InvoiceAmount
         {
             get
             {
-                decimal courseTotal = 0m;
-                foreach(var course in CoursesTaken)
+                decimal courseTotal = 0;
+                foreach (var course in CoursesTaken)
                 {
                     courseTotal += course.CourseCost;
                 }
+
+                decimal totalAmount = courseTotal + MonthlyFee;
+
+                return totalAmount;                     
             }
+
+            set { }
         }
         public bool InvoiceIsPaid { get; set; }
         [Display(Name = "Created")]
