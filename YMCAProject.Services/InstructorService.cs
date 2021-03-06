@@ -37,7 +37,7 @@ namespace YMCAProject.Services
                         {
                             InstructorID = e.InstructorID,
                             InstructorName = e.InstructorName,
-                            Location = e.Location
+                            LocationID = e.LocationID
                         }
                     );
 
@@ -57,7 +57,7 @@ namespace YMCAProject.Services
                 {
                     InstructorID = entity.InstructorID,
                     InstrcutorName = entity.InstructorName,
-                    Location = entity.Location,
+                    LocationID = entity.LocationID,
                     CoursesTaught = entity.CoursesTaught,
                     MembersTaught = entity.MembersTaught
                 };
@@ -76,7 +76,7 @@ namespace YMCAProject.Services
                         {
                             InstructorID = e.InstructorID,
                             InstructorName = e.InstructorName,
-                            Location = e.Location
+                            LocationID = e.LocationID
                         }
                     );
 
@@ -100,7 +100,7 @@ namespace YMCAProject.Services
                         {
                             InstructorID = e.InstructorID,
                             InstructorName = e.InstructorName,
-                            Location = e.Location
+                            LocationID = e.LocationID
                         }
                     );
 
@@ -117,7 +117,7 @@ namespace YMCAProject.Services
                     .Single(e => e.InstructorID == model.InstructorID);
 
                 entity.InstructorName = model.InstructorName;
-                entity.Location = model.Location;
+                entity.LocationID = model.LocationID;
 
                 return ctx.SaveChanges() > 0;
             }

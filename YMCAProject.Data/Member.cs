@@ -29,6 +29,6 @@ namespace YMCAProject.Data
         public virtual List<Invoice> Invoices { get; set; } = new List<Invoice>();
         public long CreditCardNumber { get; set; }
         public string ExpirationDate { get; set; }
-        public int SecurityCode { get; set; }
+        public int SecurityCode { get; set; }       
     }
 }

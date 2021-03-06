@@ -20,6 +20,7 @@ namespace YMCAProject.Services
                 MemberID = model.MemberID,
                 InvoiceDescription = model.InvoiceDescription,
                 InvoiceDueDate = model.InvoiceDueDate,
+                MonthlyFee = model.MonthlyFee,
                 InvoiceAmount = model.InvoiceAmount,
                 InvoiceIsPaid = model.InvoiceIsPaid,
             };
@@ -45,6 +46,7 @@ namespace YMCAProject.Services
                        InvoiceDescription = entity.InvoiceDescription,
                        CoursesTaken = entity.CoursesTaken,
                        InvoiceDueDate = entity.InvoiceDueDate,
+                       MonthlyFee = entity.MonthlyFee,
                        InvoiceAmount = entity.InvoiceAmount,
                        InvoiceIsPaid = entity.InvoiceIsPaid,
                        CreatedUtc = entity.CreatedUtc,
@@ -66,6 +68,7 @@ namespace YMCAProject.Services
                             InvoiceID = e.InvoiceID,
                             InvoiceDescription = e.InvoiceDescription,                            
                             InvoiceDueDate = e.InvoiceDueDate,
+                            MonthlyFee = e.MonthlyFee,
                             InvoiceAmount = e.InvoiceAmount,
                             InvoiceIsPaid = e.InvoiceIsPaid,                            
                         }
@@ -84,6 +87,7 @@ namespace YMCAProject.Services
                                 
                 entity.InvoiceDescription = model.InvoiceDescription;
                 entity.InvoiceDueDate = model.InvoiceDueDate;
+                entity.MonthlyFee = model.MonthlyFee;
                 entity.InvoiceAmount = model.InvoiceAmount;
                 entity.InvoiceIsPaid = model.InvoiceIsPaid;               
 
