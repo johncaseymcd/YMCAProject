@@ -4,11 +4,13 @@ The YMCA Member database looks to incorporate a standard n-tier architecture wit
 
 2.      Getting Started
 
-The Web API utilizes .Net 4.8, Entity Framework 6.0, and Owin 2.3.3 and all dependents of those projects. A full list of dependencies can be found in the Web.Config file of the WebAPI Project in Github.
+The Web API utilizes .Net 4.8, Entity Framework 6.0, and Owin 2.3.3 and all dependents of those projects. A full list of dependencies can be found in the Web.Config file of the WebAPI Project in Github. 
 
 3.      Usage and Endpoints
 
-A local database must be created as the project is not hosted. Standard migrations can be employed to deploy the database and test functionality with an application such as Postman. Each Endpoint is categorized under the applicable data class.
+A local database must be created as the project is not hosted. Standard migrations can be employed to deploy the database and test functionality with an application such as Postman. Each Endpoint is categorized under the applicable data class. 
+
+Note: Members. LocationID Foreign Key relationship must be set for CascadeDelete:False to Enable Migrations.
 
 Member
 GET api/Member/all
@@ -57,6 +59,39 @@ Request to update a course by ID
 DELETE api/Course/{id}
 Request to delete a course by ID
 
+Location
+POST api/Location
+Add a new location to the database
+GET api/Location/{id}
+Request to show a single location by ID
+GET api/Location
+Request to show all locations in database
+PUT api/Location/{id}
+Update a Location in the database by ID
+DELETE api/Location/{id}
+Delete a Location in the database by ID
+
+Instructor 
+POST api/Instructor
+Add a new instructor to the database
+GET api/Instructor
+Request to show all instructors
+GET api/Instructor/{id}?instructorID={instructorID}
+Request to show instructor by ID
+GET api/Instructor/Location/{id}?locationID={locationID}
+Request to show instructors by location ID
+GET api/Instructor/Course/{id}?courseID={courseID}
+Request to show instructors by course ID
+PUT api/Instructor/{id}
+Request to update an instructor by ID
+DELETE api/Instructor/{id}?instructorID={instructorID}
+Request to delete an instructor by ID
+
+Seeder
+GET api/seed
+Runs the seed method to prepopulate database with information
+DELETE api/clear
+Clears user-entered data from database
 
 4.      Roadmap
 
