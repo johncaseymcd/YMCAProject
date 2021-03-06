@@ -83,7 +83,7 @@ namespace YMCAProject.WebAPI.Controllers
         // Stretch goal
         // ------------
         [HttpGet]
-        [Route("api/Course/Instructor/{id}")]
+        [Route("api/Course/Instructor/{instructorID}")]
         public IHttpActionResult GetCoursesByInstructor([FromUri] int instructorID)
         {
             var service = new CourseService();
@@ -96,7 +96,7 @@ namespace YMCAProject.WebAPI.Controllers
         // Stretch goal
         // ------------
         [HttpGet]
-        [Route("api/Course/Location/{id}")]
+        [Route("api/Course/Location/{locationID}")]
         public IHttpActionResult GetCoursesByLocation([FromUri] int locationID)
         {
             var service = new CourseService();

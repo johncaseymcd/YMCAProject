@@ -21,7 +21,6 @@ namespace YMCAProject.Services
                 InvoiceDescription = model.InvoiceDescription,
                 InvoiceDueDate = model.InvoiceDueDate,
                 MonthlyFee = model.MonthlyFee,
-                InvoiceAmount = model.InvoiceAmount,
                 InvoiceIsPaid = model.InvoiceIsPaid,
             };
 

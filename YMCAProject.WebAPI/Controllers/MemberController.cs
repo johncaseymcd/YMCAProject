@@ -20,7 +20,7 @@ namespace YMCAProject.WebAPI.Controllers
             return MemberService;
         }
         [HttpGet]
-        [Route("api/Member/all")]
+        [Route("api/Member")]
         public IHttpActionResult GetAllMembers()
         {
             MemberService memberService = CreateMemberService();

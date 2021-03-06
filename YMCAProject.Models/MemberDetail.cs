@@ -16,8 +16,8 @@ namespace YMCAProject.Models
         public string Email { get; set; }
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
-        public virtual List<Course> CoursesTaken { get; set; } = new List<Course>();
-        public virtual List<Invoice> Invoices { get; set; } = new List<Invoice>();
+        public virtual List<string> CoursesTaken { get; set; }
+        public virtual List<string> Invoices { get; set; }
         public long CreditCardNumber { get; set; }
         public string ExpirationDate { get; set; }
         public int SecurityCode { get; set; }

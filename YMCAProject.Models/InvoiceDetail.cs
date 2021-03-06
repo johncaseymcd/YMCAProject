@@ -16,6 +16,7 @@ namespace YMCAProject.Models
         public string InvoiceDescription { get; set; }
         public ICollection<Course> CoursesTaken { get; set; }
         public DateTimeOffset InvoiceDueDate { get; set; }
+        public decimal MonthlyFee { get; set; }
         public decimal InvoiceAmount { get; set; }
         public bool InvoiceIsPaid { get; set; }
         [Display(Name = "Created")]

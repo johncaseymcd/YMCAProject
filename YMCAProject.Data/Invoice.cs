@@ -33,7 +33,7 @@ namespace YMCAProject.Data
                     courseTotal += course.CourseCost;
                 }
 
-                decimal totalAmount = courseTotal + MonthlyFee;
+                decimal totalAmount = (courseTotal + MonthlyFee) * 1.07m;
 
                 return totalAmount;                     
             }
