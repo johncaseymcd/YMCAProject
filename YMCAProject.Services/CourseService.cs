@@ -78,7 +78,7 @@ namespace YMCAProject.Services
                         CourseCost = entity.CourseCost,
                         MaxCourseSize = entity.MaxCourseSize,
                         HasAvailability = entity.ListOfMembers.Count < entity.MaxCourseSize,
-                        ListOfMembers = entity.ListOfMembers,
+                        //ListOfMembers = entity.ListOfMembers,
                         CourseStartDate = entity.CourseStartDate,
                         CourseEndDate = entity.CourseEndDate,
                         IsCurrentlyRunning = entity.IsCurrentlyRunning,
