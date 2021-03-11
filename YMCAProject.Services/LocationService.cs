@@ -42,8 +42,8 @@ namespace YMCAProject.Services
                 var entity = ctx
                     .Locations
                     .Single(e => e.LocationID == locationID);
-                    var memberNames = new List<string>();
-                foreach (var member in entity.ListOfMembers)
+                var memberNames = new List<string>();
+                foreach(var member in entity.ListOfMembers)
                 {
                     memberNames.Add(member.Name);
                 }
