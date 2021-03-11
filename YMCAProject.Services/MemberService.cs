@@ -87,7 +87,9 @@ namespace YMCAProject.Services
                         CreditCardNumber = entity.CreditCardNumber,
                         ExpirationDate = entity.ExpirationDate,
                         SecurityCode = entity.SecurityCode,
-                        LocationID = entity.LocationID
+                        LocationID = entity.LocationID,
+                        CoursesTaken = courseNames,
+                        Invoices = invoiceDesc
                     };
             }
         }
