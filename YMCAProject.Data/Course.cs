@@ -21,7 +21,18 @@ namespace YMCAProject.Data
         public virtual List<Member> ListOfMembers { get; set; } = new List<Member>();
         [Required]
         public int MaxCourseSize { get; set; }
-        public bool HasAvailability { get; set; }
+        public bool HasAvailability
+        {
+            get
+            {
+                if (ListOfMembers.Count < MaxCourseSize)
+                    return true;
+
+                return false;
+            }
+
+            set { }
+        }
 
         // Stretch goal
         // ------------
