@@ -151,13 +151,9 @@
     <Compile Include="Invoice.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Member.cs" />
-    <Compile Include="Migrations\202103062037250_RemovedFKFromMember.cs" />
-    <Compile Include="Migrations\202103062037250_RemovedFKFromMember.designer.cs">
-      <DependentUpon>202103062037250_RemovedFKFromMember.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202103062100364_VirtualListOfMembers.cs" />
-    <Compile Include="Migrations\202103062100364_VirtualListOfMembers.designer.cs">
-      <DependentUpon>202103062100364_VirtualListOfMembers.cs</DependentUpon>
+    <Compile Include="Migrations\202103062136033_Updates.cs" />
+    <Compile Include="Migrations\202103062136033_Updates.designer.cs">
+      <DependentUpon>202103062136033_Updates.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -167,11 +163,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202103062037250_RemovedFKFromMember.resx">
-      <DependentUpon>202103062037250_RemovedFKFromMember.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103062100364_VirtualListOfMembers.resx">
-      <DependentUpon>202103062100364_VirtualListOfMembers.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202103062136033_Updates.resx">
+      <DependentUpon>202103062136033_Updates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
